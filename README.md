@@ -43,9 +43,9 @@ Serverless [CLI](https://serverless.com/framework/docs/getting-started/)
 
 This repository uses [lerna](https://lernajs.io/) and yarn workspaces to handle dependencies.
 
-The React frontend app sites under `frontend/`.
+The React frontend app sits under `frontend/`.
 
-The Serverless services sits under `services/`.
+The Serverless services sit under `services/`.
 
 Shared services code is under `services/common/` (e.g. both `api-service` and `email-service` use the same authentication handler).
 
@@ -59,11 +59,11 @@ Install Dependencies
 yarn install
 ```
 
-CI/CD is setup for 3 different environments: `dev` (for local development), `qa` (for integration testings) and `prod` (production).
+CI/CD is setup for 3 different environments: `dev` (for local development), `qa` (for integration tests) and `prod` (production).
 
 ### Setup Environments
 
-This part can be a bit tedious, but you only do it once for each environment.
+This part can be a bit tedious, but you only have to do it once.
 
 #### Sendgrid
 
@@ -71,7 +71,7 @@ This part can be a bit tedious, but you only do it once for each environment.
 
 For sending emails you'll need a Sendgrid API key for each environment you'll want to have (3 keys if you want `dev`,`qa` and `prod`).
 
-Login into your Sendgrid account and create an API key for each environment (you can name them `Serverless App Dev`, `Serverless App QA`, etc.).
+Login into your Sendgrid account and create an API key (with email sending permissions) for each environment (you can name them `Serverless App Dev`, `Serverless App QA`, etc.).
 
 Make sure to copy the API keys somewhere as you'll only see them once.
 
@@ -133,22 +133,12 @@ QA_REGION # You can use `us-east-1` at the moment
 QA_SENDGRID_API_KEY
 ```
 
-## Run Tests
-
-```bash
-yarn test
-```
-
-```bash
-yarn coverage
-```
-
 ## Deployment
 
 Development environment
 
 ```bash
-yarn deploy:dev # deploys services and update frontend configuration
+yarn deploy:dev # deploys services and updates frontend configuration
 yarn build:frontend # builds frontend application
 yarn publish:frontend:dev # deploys frontend application
 ```
@@ -160,4 +150,34 @@ Production environment will be deployed automatically on each version tag push, 
 ```bash
 git tag "v0.0.1"
 git push --tags
+```
+
+## Post Deployment Setup
+
+After deploying there is one last step to get Auth0 to work.
+
+[Open Auth0 management dashboard](https://manage.auth0.com) and go to `applications->${YOUR_APP_NAME}->settings`.
+
+Update `Allowed Callback URLs` with:
+
+```bash
+http://localhost:3000/callback,http://localhost:5000/callback,https://YOUR_CLOUDFRONT_DOMAIN/callback
+```
+
+Update `Allowed Web Origins` with:
+
+```bash
+http://localhost:3000,http://localhost:5000,https://YOUR_CLOUDFRONT_DOMAIN
+```
+
+You can get the domain value from here: <https://console.aws.amazon.com/cloudfront/home>
+
+## Run Tests
+
+```bash
+yarn test
+```
+
+```bash
+yarn coverage
 ```
