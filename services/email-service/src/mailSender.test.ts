@@ -35,6 +35,10 @@ describe('mailSender', () => {
       input,
       message: 'Bad input data or missing email address.',
     }),
+    headers: {
+      'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Origin': '*',
+    },
     statusCode: 422,
   });
 
@@ -106,6 +110,10 @@ describe('mailSender', () => {
         input: 'body',
         message: 'Request to send email is successful.',
       }),
+      headers: {
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': '*',
+      },
       statusCode: 202,
     });
     expect(error).toBeNull();
@@ -136,6 +144,10 @@ describe('mailSender', () => {
         input: body,
         message: 'Unknown Error',
       }),
+      headers: {
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': '*',
+      },
       statusCode: 500,
     });
     expect(error).toBe(err);
