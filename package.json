@@ -9,7 +9,7 @@
     "lint": "lerna exec yarn lint",
     "test": "lerna exec yarn test",
     "test:ci": "lerna exec yarn test:ci",
-    "coverage": "lerna exec yarn coverage",
+    "coverage": "lerna exec --concurrency 1 yarn coverage",
     "deploy:dev": "lerna run --concurrency 1 deploy:dev",
     "deploy:qa": "lerna run --concurrency 1 deploy:qa",
     "deploy:prod": "lerna run --concurrency 1 deploy:prod",
@@ -21,5 +21,7 @@
     "jest-junit": "^5.1.0",
     "lerna": "^2.11.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "author": "Erez Rokah",
+  "license": "MIT"
 }
