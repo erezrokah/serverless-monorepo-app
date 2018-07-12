@@ -4,6 +4,46 @@ exports[`Api Component should render correctly 1`] = `
 <div
   className="ui segment"
 >
+  <form
+    action={undefined}
+    className="ui form"
+    id="apiForm"
+    onSubmit={[Function]}
+  >
+    <div
+      className="fields"
+    >
+      <div
+        className="required field"
+      >
+        <div
+          className="ui input"
+          content={undefined}
+        >
+          <input
+            disabled={undefined}
+            id="emailApi"
+            name="email"
+            onChange={[Function]}
+            placeholder="Email"
+            required={true}
+            tabIndex={undefined}
+            type="email"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        className="ui button"
+        disabled={undefined}
+        onClick={[Function]}
+        role="button"
+        tabIndex={undefined}
+      >
+        Send Email
+      </button>
+    </div>
+  </form>
   <button
     className="ui button"
     disabled={undefined}

@@ -43,6 +43,12 @@ export const sendMail = async (body: string | null) => {
           input,
           message: 'Request to send email is successful.',
         }),
+        headers: {
+          /* Required for cookies, authorization headers with HTTPS */
+          'Access-Control-Allow-Credentials': true,
+          /* Required for CORS support to work */
+          'Access-Control-Allow-Origin': '*',
+        },
         statusCode: 202,
       };
       console.log(response);
@@ -54,6 +60,12 @@ export const sendMail = async (body: string | null) => {
           input: body,
           message: 'Unknown Error',
         }),
+        headers: {
+          /* Required for cookies, authorization headers with HTTPS */
+          'Access-Control-Allow-Credentials': true,
+          /* Required for CORS support to work */
+          'Access-Control-Allow-Origin': '*',
+        },
         statusCode: 500,
       };
       return { response, error };
@@ -64,6 +76,12 @@ export const sendMail = async (body: string | null) => {
         input: body,
         message: 'Bad input data or missing email address.',
       }),
+      headers: {
+        /* Required for cookies, authorization headers with HTTPS */
+        'Access-Control-Allow-Credentials': true,
+        /* Required for CORS support to work */
+        'Access-Control-Allow-Origin': '*',
+      },
       statusCode: 422,
     };
     return { response, error: null };

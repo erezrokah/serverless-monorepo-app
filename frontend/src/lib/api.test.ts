@@ -1,6 +1,9 @@
 const ENDPOINT = 'https://endpoint.test.com';
 process.env.REACT_APP_API_SERVICE_ENDPOINT = ENDPOINT;
 
+const EMAIL_ENDPOINT = 'https://email.endpoint.test.com';
+process.env.REACT_APP_EMAIL_SERVICE_ENDPOINT = EMAIL_ENDPOINT;
+
 jest.spyOn(console, 'log');
 
 describe('api lib', () => {
@@ -47,7 +50,7 @@ describe('api lib', () => {
     expect(console.log).toHaveBeenCalledWith('error', error);
   });
 
-  test('should call public api and get response', async () => {
+  test('should call private api and get response', async () => {
     const { privateApi } = require('./api');
 
     const token = 'someIdToken';
@@ -78,6 +81,44 @@ describe('api lib', () => {
     fetch.mockReturnValueOnce(Promise.reject(error));
 
     await privateApi();
+
+    expect(console.log).toHaveBeenCalledTimes(1);
+    expect(console.log).toHaveBeenCalledWith('error', error);
+  });
+
+  test('should call email api and get response', async () => {
+    const { emailApi } = require('./api');
+
+    const token = 'someIdToken';
+    localStorage.getItem.mockReturnValueOnce(token);
+    const data = 'data';
+    const json = jest.fn();
+    json.mockReturnValueOnce(Promise.resolve(data));
+    const response = { json };
+    fetch.mockReturnValueOnce(response);
+
+    const toAddress = 'to_address';
+    await emailApi(toAddress);
+
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(fetch).toHaveBeenCalledWith(`${EMAIL_ENDPOINT}/email`, {
+      body: JSON.stringify({ to_address: toAddress }),
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      method: 'POST',
+    });
+    expect(console.log).toHaveBeenCalledTimes(1);
+    expect(console.log).toHaveBeenCalledWith('Mail:', data);
+  });
+
+  test('should call email api and handle error', async () => {
+    const { emailApi } = require('./api');
+
+    const error = new Error('error');
+    fetch.mockReturnValueOnce(Promise.reject(error));
+
+    await emailApi('');
 
     expect(console.log).toHaveBeenCalledTimes(1);
     expect(console.log).toHaveBeenCalledWith('error', error);

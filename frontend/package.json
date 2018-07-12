@@ -26,7 +26,8 @@
     "start": "react-scripts-ts start",
     "build": "CI=true react-scripts-ts build",
     "lint": "tslint '*.ts'",
-    "test": "TZ=GMT react-scripts-ts test --env=jsdom",
+    "test": "TZ=GMT CI=true react-scripts-ts test --env=jsdom",
+    "test:watch": "TZ=GMT react-scripts-ts test --env=jsdom",
     "test:ci": "TZ=GMT CI=true JEST_JUNIT_OUTPUT=../reports/junit/${npm_package_name}-test-results.xml yarn test --ci --reporters=jest-junit --reporters=default",
     "coverage": "TZ=GMT yarn test --coverage",
     "eject": "react-scripts-ts eject",
@@ -69,5 +70,7 @@
       "!src/registerServiceWorker.ts",
       "!src/index.tsx"
     ]
-  }
+  },
+  "author": "Erez Rokah",
+  "license": "MIT"
 }
