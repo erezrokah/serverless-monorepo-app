@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Public Component should render correctly 1`] = `
+<div
+  className="ui segment"
+>
+   This is a public page 
+</div>
+`;

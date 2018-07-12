@@ -1,0 +1,74 @@
+service: email-service
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-stack-output
+
+custom:
+  defaultStage: dev
+  currentStage: ${opt:stage, self:custom.defaultStage}
+  currentRegion: ${file(../common/environment/config.${self:custom.currentStage}.json):region}
+
+  output:
+    handler: ../../scripts/stackOutput.handler
+
+  webpack:
+    includeModules: true
+    packager: yarn
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.currentStage}
+  region: ${self:custom.currentRegion}
+
+  environment:
+    AUTH0_CLIENT_ID: ${file(../common/environment/config.${self:custom.currentStage}.json):AUTH0_CLIENT_ID}
+    AUTH0_CLIENT_PUBLIC_KEY: ${file(../common/environment/public_key.${self:custom.currentStage}.pem)}
+
+    SENDGRID_API_KEY: ${file(./config.${self:custom.currentStage}.json):SENDGRID_API_KEY}
+
+functions:
+  auth:
+    handler: src/authHandler.auth
+    cors: true
+
+  send:
+    handler: src/handler.sendEmail
+    events:
+      - http:
+          path: email
+          method: post
+          authorizer: auth
+          cors: true
+
+resources:
+  Resources:
+    # This response is needed for custom authorizer failures cors support ¯\_(ツ)_/¯
+    GatewayResponse:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+        ResponseType: EXPIRED_TOKEN
+        RestApiId:
+          Ref: 'ApiGatewayRestApi'
+        StatusCode: '401'
+    AuthFailureGatewayResponse:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+        ResponseType: UNAUTHORIZED
+        RestApiId:
+          Ref: 'ApiGatewayRestApi'
+        StatusCode: '401'
+
+package:
+  individually: true
+  exclude:
+    - coverage/**
+    - .circleci/**

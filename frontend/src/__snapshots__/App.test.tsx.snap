@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly initialized=false 1`] = `
+<div
+  className="ui container"
+>
+  <loading-component />
+</div>
+`;
+
+exports[`App renders correctly initialized=true 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    style={
+      Object {
+        "margin": "0 auto",
+        "width": 1000,
+      }
+    }
+  >
+    <div
+      className="ui segment"
+    >
+      <ul>
+        <li>
+          <a
+            href="/public"
+            onClick={[Function]}
+          >
+             Public Page 
+          </a>
+        </li>
+        <li>
+          <a
+            href="/private"
+            onClick={[Function]}
+          >
+             Private Private 
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="ui segment"
+    >
+      Welcome!
+    </div>
+    <auth-status-component />
+    <api-component />
+  </div>
+</div>
+`;

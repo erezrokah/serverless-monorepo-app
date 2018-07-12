@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "workspaces": [
+    "services/*",
+    "frontend"
+  ],
+  "scripts": {
+    "build:frontend": "lerna run build --scope frontend",
+    "lint": "lerna exec yarn lint",
+    "test": "lerna exec yarn test",
+    "test:ci": "lerna exec yarn test:ci",
+    "coverage": "lerna exec yarn coverage",
+    "deploy:dev": "lerna run --concurrency 1 deploy:dev",
+    "deploy:qa": "lerna run --concurrency 1 deploy:qa",
+    "deploy:prod": "lerna run --concurrency 1 deploy:prod",
+    "publish:frontend:dev": "lerna run publish:dev --scope frontend",
+    "publish:frontend:qa": "lerna run publish:qa --scope frontend",
+    "publish:frontend:prod": "lerna run publish:prod --scope frontend"
+  },
+  "devDependencies": {
+    "jest-junit": "^5.1.0",
+    "lerna": "^2.11.0",
+    "prettier": "^1.13.7"
+  }
+}

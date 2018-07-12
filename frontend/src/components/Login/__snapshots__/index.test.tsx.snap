@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Callback Component should render correctly 1`] = `
+<div
+  className="ui segment"
+>
+  <button
+    className="ui button"
+    disabled={undefined}
+    onClick={[Function]}
+    role="button"
+    tabIndex={undefined}
+  >
+    Log in
+  </button>
+</div>
+`;

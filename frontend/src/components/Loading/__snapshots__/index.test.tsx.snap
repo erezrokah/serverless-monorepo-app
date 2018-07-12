@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Components ComponentLoading should render correctly 1`] = `null`;
+
+exports[`Loading Components ComponentLoading should render correctly with error 1`] = `
+<div
+  className="ui segment"
+>
+  Error! 
+  <button
+    className="ui button"
+    disabled={undefined}
+    onClick={[Function]}
+    role="button"
+    tabIndex={undefined}
+  >
+    Retry
+  </button>
+</div>
+`;
+
+exports[`Loading Components ComponentLoading should render correctly with pastDelay 1`] = `
+<div
+  className="ui segment"
+>
+  Loading...
+</div>
+`;
+
+exports[`Loading Components ComponentLoading should render correctly with timedOut 1`] = `
+<div
+  className="ui segment"
+>
+  Taking a long time... 
+  <button
+    className="ui button"
+    disabled={undefined}
+    onClick={[Function]}
+    role="button"
+    tabIndex={undefined}
+  >
+    Retry
+  </button>
+</div>
+`;
+
+exports[`Loading Components Loading should render correctly 1`] = `
+<div
+  className="ui active transition visible inverted dimmer"
+  onClick={[Function]}
+>
+  <div
+    className="content"
+  >
+    <div
+      className="ui inverted text loader"
+    >
+      Loading
+    </div>
+  </div>
+</div>
+`;

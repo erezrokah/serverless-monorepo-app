@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthStatus Component should render correctly authenticated=false 1`] = `
+<div
+  className="ui segment"
+>
+  You are not logged in.
+</div>
+`;
+
+exports[`AuthStatus Component should render correctly authenticated=true 1`] = `
+<div
+  className="ui segment"
+>
+  <button
+    className="ui button"
+    disabled={undefined}
+    onClick={[Function]}
+    role="button"
+    tabIndex={undefined}
+  >
+    Sign out
+  </button>
+</div>
+`;

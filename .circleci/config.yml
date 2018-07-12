@@ -1,0 +1,206 @@
+version: 2
+
+aliases:
+  - &container_config
+    docker:
+      - image: circleci/node:carbon
+      
+    working_directory: ~/repo
+
+  - &checkout
+    checkout
+
+  - &build_only_filters
+    filters:
+      branches:
+        ignore: /master/
+
+  - &build_and_deploy_qa_filters
+    filters:
+      branches:
+        only: master
+
+  - &build_and_deploy_prod_filters
+    filters:
+      tags:
+        only: /^v.*/
+      branches:
+        ignore: /.*/
+
+  - &save_cache
+    save_cache:
+      paths:
+        - node_modules
+        - frontend/node_modules
+        - services/common/node_modules
+        - services/email-service/node_modules
+        - services/api-service/node_modules
+      key: dependencies-cache-{{ checksum "yarn.lock" }}
+
+  - &restore_cache
+    restore_cache:
+      keys:
+        - dependencies-cache-{{ checksum "yarn.lock" }}
+        # fallback to using the latest cache if no exact match is found
+        - dependencies-cache
+
+  - &install_dependencies
+    run:
+      name: Install Dependencies
+      command: yarn install
+
+  # Deploying the services generates the environment variables for the static frontend app
+  # so we need to build the app after services deployment
+  - &build_frontend
+    run:
+      name: Build frontend
+      command: yarn build:frontend
+
+  - &run_linter
+    run:
+      name: Run Linter
+      command: yarn lint
+
+  - &run_tests
+    run:
+      name: Run Tests
+      command: yarn test:ci
+
+  - &store_test_results
+    store_test_results:
+      path: reports/junit
+
+  - &install_serverless_cli
+    run:
+      name: Install Serverless CLI
+      command: sudo npm i -g serverless
+
+  - &setup_path_env
+    run: echo 'export PATH=/home/circleci/.local/bin:$PATH' >> $BASH_ENV
+
+  - &install_aws_cli
+    run:
+      name: Install awscli
+      command: |
+        sudo apt-get -y -qq update
+        sudo apt-get -y -qq install python3.4-dev
+        curl -O https://bootstrap.pypa.io/get-pip.py
+        python3.4 get-pip.py --user
+        pip install awscli --upgrade --user
+        
+jobs:
+  build:
+    <<: *container_config
+
+    steps:
+      - *checkout
+      - *restore_cache
+      - *install_dependencies
+      - *save_cache
+      - *run_linter
+      - *run_tests
+      - *store_test_results      
+
+  deploy-qa:
+    <<: *container_config
+
+    steps:
+      - *checkout
+      - *restore_cache
+      - *install_serverless_cli
+      - *setup_path_env
+      - *install_aws_cli
+
+      - run:
+          name: Setup QA Services Environment
+          command: >          
+            sed -i "s/REGION_VALUE/$QA_REGION/g" services/common/environment/config.example.json &&
+            sed -i "s/AUTH0_CLIENT_ID_VALUE/$QA_AUTH0_CLIENT_ID/g" services/common/environment/config.example.json &&
+            mv services/common/environment/config.example.json services/common/environment/config.qa.json &&            
+            echo $QA_AUTH0_PUBLIC_KEY | base64 --decode --ignore-garbage > services/common/environment/public_key.qa.pem &&
+
+            sed -i "s/SENDGRID_API_KEY_VALUE/$QA_SENDGRID_API_KEY/g" services/email-service/config.example.json &&
+            mv services/email-service/config.example.json services/email-service/config.qa.json
+      - run:
+          name: Deploy services to QA
+          command: yarn deploy:qa
+          no_output_timeout: 30m
+
+      - run:
+          name: Setup QA frontend Environment
+          command: >          
+            echo "REACT_APP_AUTH0_AUDIENCE=$QA_AUTH0_AUDIENCE" >> frontend/.env.production.local &&
+            echo "REACT_APP_AUTH0_CLIENT_ID=$QA_AUTH0_CLIENT_ID" >> frontend/.env.production.local &&
+            echo "REACT_APP_AUTH0_DOMAIM=$QA_AUTH0_DOMAIM" >> frontend/.env.production.local &&
+            echo "GENERATE_SOURCEMAP=true" >> .env.production.local
+
+      - *build_frontend
+
+      - run:
+          name: Publish frontend to QA
+          command: yarn publish:frontend:qa
+
+  deploy-prod:
+    <<: *container_config
+
+    steps:
+      - *checkout
+      - *restore_cache
+      - *install_serverless_cli
+      - *setup_path_env
+      - *install_aws_cli
+
+      - run:
+          name: Setup PROD Services Environment
+          command: >
+            sed -i "s/REGION_VALUE/$PROD_REGION/g" services/common/environment/config.example.json &&
+            sed -i "s/AUTH0_CLIENT_ID_VALUE/$PROD_AUTH0_CLIENT_ID/g" services/common/environment/config.example.json &&
+            mv services/common/environment/config.example.json services/common/environment/config.prod.json &&
+            echo $PROD_AUTH0_PUBLIC_KEY | base64 --decode --ignore-garbage > services/common/environment/public_key.prod.pem &&
+
+            sed -i "s/SENDGRID_API_KEY_VALUE/$PROD_SENDGRID_API_KEY/g" services/email-service/config.example.json &&
+            mv services/email-service/config.example.json services/email-service/config.prod.json
+
+      - run:
+          name: Deploy services to PROD
+          command: yarn deploy:prod
+          no_output_timeout: 30m
+
+      - run:
+          name: Setup PROD frontend Environment
+          command: >          
+            echo "REACT_APP_AUTH0_AUDIENCE=$PROD_AUTH0_AUDIENCE" >> frontend/.env.production.local &&
+            echo "REACT_APP_AUTH0_CLIENT_ID=$PROD_AUTH0_CLIENT_ID" >> frontend/.env.production.local &&
+            echo "REACT_APP_AUTH0_DOMAIM=$PROD_AUTH0_DOMAIM" >> frontend/.env.production.local &&
+            echo "GENERATE_SOURCEMAP=false" >> .env.production.local
+
+      - *build_frontend
+
+      - run:
+          name: Publish frontend to PROD
+          command: yarn publish:frontend:prod
+
+workflows:
+      version: 2
+      build-only:
+        jobs:
+          - build:
+              <<: *build_only_filters
+
+      build-and-deploy-qa:
+        jobs:
+          - build:
+              <<: *build_and_deploy_qa_filters
+          - deploy-qa:
+              requires:
+                - build
+              <<: *build_and_deploy_qa_filters
+
+      build-and-deploy-prod:
+        jobs:
+          - build:
+              <<: *build_and_deploy_prod_filters
+          - deploy-prod:
+              requires:
+                - build
+              <<: *build_and_deploy_prod_filters  

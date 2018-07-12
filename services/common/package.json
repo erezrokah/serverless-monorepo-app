@@ -1,0 +1,28 @@
+{
+  "name": "common",
+  "version": "0.0.1",
+  "description": "Shared Services Code",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "JEST_JUNIT_OUTPUT=../../reports/junit/${npm_package_name}-test-results.xml jest --runInBand --ci",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.7",
+    "@types/jest": "^23.1.4",
+    "@types/jsonwebtoken": "^7.2.8",
+    "@types/node": "^10.5.1",
+    "jest": "^23.2.0",
+    "ts-jest": "22.4.6",
+    "ts-loader": "^4.4.2",
+    "tslint-config-prettier": "^1.13.0",
+    "typescript": "^2.9.2"
+  },
+  "author": "Erez Rokah",
+  "license": "MIT"
+}

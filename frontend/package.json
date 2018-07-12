@@ -1,0 +1,73 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "auth0-js": "^9.6.1",
+    "connected-react-router": "^4.3.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-loadable": "^5.4.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts-ts": "2.16.0",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-auth-wrapper": "^2.0.3",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1",
+    "semantic-ui-css": "^2.3.2",
+    "semantic-ui-react": "^0.81.3",
+    "styled-components": "^3.3.3"
+  },
+  "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "start": "react-scripts-ts start",
+    "build": "CI=true react-scripts-ts build",
+    "lint": "tslint '*.ts'",
+    "test": "TZ=GMT react-scripts-ts test --env=jsdom",
+    "test:ci": "TZ=GMT CI=true JEST_JUNIT_OUTPUT=../reports/junit/${npm_package_name}-test-results.xml yarn test --ci --reporters=jest-junit --reporters=default",
+    "coverage": "TZ=GMT yarn test --coverage",
+    "eject": "react-scripts-ts eject",
+    "deploy:dev": "serverless deploy --stage dev",
+    "deploy:qa": "serverless deploy --stage qa",
+    "deploy:prod": "serverless deploy --stage prod",
+    "publish:dev": "serverless syncToS3 --stage dev && serverless invalidateCloudFrontCache --stage dev",
+    "publish:qa": "serverless syncToS3 --stage qa && serverless invalidateCloudFrontCache --stage qa",
+    "publish:prod": "serverless syncToS3 --stage prod && serverless invalidateCloudFrontCache --stage prod"
+  },
+  "devDependencies": {
+    "@types/auth0-js": "^8.11.2",
+    "@types/enzyme": "^3.1.11",
+    "@types/jest": "^23.1.4",
+    "@types/node": "^10.5.1",
+    "@types/react": "^16.4.6",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-loadable": "^5.4.0",
+    "@types/react-redux": "^6.0.3",
+    "@types/react-router": "^4.0.28",
+    "@types/react-router-dom": "^4.2.7",
+    "@types/react-test-renderer": "^16.0.1",
+    "@types/redux-actions": "^2.3.0",
+    "@types/redux-auth-wrapper": "^2.0.8",
+    "@types/redux-mock-store": "^1.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-styled-components": "^5.0.1",
+    "mockdate": "^2.0.2",
+    "react-test-renderer": "^16.4.1",
+    "redux-mock-store": "^1.5.3",
+    "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin",
+    "serverless-stack-output": "^0.2.3",
+    "source-map-explorer": "^1.5.0",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/registerServiceWorker.ts",
+      "!src/index.tsx"
+    ]
+  }
+}

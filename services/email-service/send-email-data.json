@@ -1,0 +1,18 @@
+{
+  "resource": "/email",
+  "path": "/email",
+  "httpMethod": "POST",
+  "headers": {},
+  "queryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "path": "/dev/email",
+    "stage": "dev",
+    "requestId": "123",
+    "resourcePath": "/email",
+    "httpMethod": "POST"
+  },
+  "body": "{\"to_address\":\"erezrokah@gmail.com\"}",
+  "isBase64Encoded": false
+}

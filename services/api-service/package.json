@@ -1,0 +1,38 @@
+{
+  "name": "api-service",
+  "version": "0.0.1",
+  "description": "Serverless Auth0 Service",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "JEST_JUNIT_OUTPUT=../../reports/junit/${npm_package_name}-test-results.xml jest --runInBand --ci",
+    "coverage": "jest --coverage",
+    "deploy:dev": "serverless deploy --stage dev",
+    "deploy:qa": "serverless deploy --stage qa",
+    "deploy:prod": "serverless deploy --stage prod"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.7",
+    "@types/jest": "^23.1.4",
+    "@types/jsonwebtoken": "^7.2.8",
+    "@types/node": "^10.5.1",
+    "dotenv": "^6.0.0",
+    "fs-extra": "^6.0.1",
+    "jest": "^23.2.0",
+    "serverless-offline": "^3.25.5",
+    "serverless-stack-output": "^0.2.3",
+    "serverless-webpack": "^5.1.5",
+    "ts-jest": "22.4.6",
+    "ts-loader": "^4.4.2",
+    "tslint-config-prettier": "^1.13.0",
+    "typescript": "^2.9.2",
+    "webpack": "^4.14.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "author": "Erez Rokah",
+  "license": "MIT"
+}
