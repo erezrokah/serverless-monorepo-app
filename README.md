@@ -10,7 +10,7 @@ Since the endpoint urls for the services change between environments (dev/qa/pro
 
 Since all of our code sits in the same repository, we can update the frontend app environment based on the services deployment with ease.
 
-This application uses Auth0 for authentication, Sendgrid for sending emails, CircleCI for deployment and AWS as a cloud provider.
+This application uses `Auth0` for authentication, `Sendgrid` for sending emails, `CircleCI` for deployment and `AWS` as a cloud provider.
 
 ## Resources Used
 
