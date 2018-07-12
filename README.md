@@ -91,9 +91,9 @@ You'll need your application's `Domain`, `Client ID`, `Audience` and the public 
 
 `Domain` and `Client ID` are under `applications->${YOUR_APP_NAME}->settings`.
 
-`Audience` is `https://YOUR_DOMAIN/userinfo` and to get the certificate you'll need to scroll down, go to `Show Advanced Settings->Certificates->DOWNLOAD CERTIFICATE`.
+`Audience` is usually `https://YOUR_DOMAIN/userinfo` and to get the certificate you'll need to scroll down, go to `Show Advanced Settings->Certificates->DOWNLOAD CERTIFICATE`.
 
-You should have the certificate in `PEM` format.
+You should save the certificate in `PEM` format.
 
 #### Setup Dev Environments Files
 
@@ -122,13 +122,13 @@ Under `Settings->Environment Variables` add the following items (update the valu
 PROD_AUTH0_AUDIENCE
 PROD_AUTH0_CLIENT_ID
 PROD_AUTH0_DOMAIM
-PROD_AUTH0_PUBLIC_KEY # This value should be base64 encoded, run `base64` to get the value
+PROD_AUTH0_PUBLIC_KEY # This value should be base64 encoded, run `base64 ${LOCATION_TO_PEM_FILE}` to get the value
 PROD_REGION # You can use `us-east-1` at the moment
 PROD_SENDGRID_API_KEY
 QA_AUTH0_AUDIENCE
 QA_AUTH0_CLIENT_ID
 QA_AUTH0_DOMAIM
-QA_AUTH0_PUBLIC_KEY # This value should be base64 encoded, run `base64` to get the value
+QA_AUTH0_PUBLIC_KEY # This value should be base64 encoded, run `base64 ${LOCATION_TO_PEM_FILE}` to get the value
 QA_REGION # You can use `us-east-1` at the moment
 QA_SENDGRID_API_KEY
 ```
