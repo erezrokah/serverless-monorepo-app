@@ -15,11 +15,7 @@ describe('Api Component', () => {
     const { publicApi } = require('../../lib/api');
     const wrapper = shallow(<Api />);
 
-    // @ts-ignore access to undefined
-    wrapper
-      .find('#publicApi')
-      .props()
-      .onClick();
+    wrapper.find('#publicApi').simulate('click');
 
     expect(publicApi).toHaveBeenCalledTimes(1);
   });
@@ -28,12 +24,35 @@ describe('Api Component', () => {
     const { privateApi } = require('../../lib/api');
     const wrapper = shallow(<Api />);
 
-    // @ts-ignore access to undefined
-    wrapper
-      .find('#privateApi')
-      .props()
-      .onClick();
+    wrapper.find('#privateApi').simulate('click');
 
     expect(privateApi).toHaveBeenCalledTimes(1);
+  });
+
+  test('should call email api on button click', () => {
+    const { emailApi } = require('../../lib/api');
+    const wrapper = shallow(<Api />);
+
+    const email = 'email';
+
+    wrapper.setState({ email });
+
+    wrapper.find('#apiForm').simulate('submit');
+
+    expect(emailApi).toHaveBeenCalledTimes(1);
+    expect(emailApi).toHaveBeenCalledWith(email);
+  });
+
+  test('should update state on email change', () => {
+    const wrapper = shallow(<Api />);
+
+    wrapper.setState({ email: '' });
+    const email = 'email';
+
+    wrapper
+      .find('#emailApi')
+      .simulate('change', {}, { name: email, value: email });
+
+    expect(wrapper.state()).toEqual({ email });
   });
 });
