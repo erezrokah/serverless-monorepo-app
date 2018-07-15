@@ -6,7 +6,6 @@ import { Button } from 'semantic-ui-react';
 import { logoutRequested as logout } from '../../actions/auth';
 import ConnectedAuthStatus, { AuthStatus } from './';
 
-jest.mock('../../lib/api');
 jest.mock('../../selectors/auth');
 
 const middlewares: any[] = [];

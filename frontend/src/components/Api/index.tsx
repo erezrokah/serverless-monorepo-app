@@ -1,9 +1,20 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { Button, Form, Segment } from 'semantic-ui-react';
-import { emailApi, privateApi, publicApi } from '../../lib/api';
+import {
+  emailApiRequested,
+  privateApiRequested,
+  publicApiRequested,
+} from '../../actions/api';
 
 interface IState {
   [key: string]: string;
+}
+
+interface IProps {
+  emailApiRequested: typeof emailApiRequested;
+  privateApiRequested: typeof privateApiRequested;
+  publicApiRequested: typeof publicApiRequested;
 }
 
 interface IEventProps {
@@ -11,8 +22,8 @@ interface IEventProps {
   value: string;
 }
 
-class Api extends React.Component<any, IState> {
-  constructor(props: any) {
+export class Api extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.state = { email: '' };
   }
@@ -24,7 +35,7 @@ class Api extends React.Component<any, IState> {
         <Form id="apiForm" onSubmit={this.onEmailSend}>
           <Form.Group>
             <Form.Input
-              placeholder="Email"
+              placeholder="Destination Email"
               name="email"
               type="email"
               value={email}
@@ -35,10 +46,10 @@ class Api extends React.Component<any, IState> {
             <Button content="Send Email" />
           </Form.Group>
         </Form>
-        <Button id="publicApi" onClick={publicApi}>
+        <Button id="publicApi" onClick={this.props.publicApiRequested}>
           Public Api
         </Button>
-        <Button id="privateApi" onClick={privateApi}>
+        <Button id="privateApi" onClick={this.props.privateApiRequested}>
           Private Api
         </Button>
       </Segment>
@@ -50,7 +61,10 @@ class Api extends React.Component<any, IState> {
     { name, value }: IEventProps,
   ) => this.setState({ [name]: value });
 
-  private onEmailSend = () => emailApi(this.state.email);
+  private onEmailSend = () => this.props.emailApiRequested(this.state.email);
 }
 
-export default Api;
+export default connect(
+  null,
+  { emailApiRequested, privateApiRequested, publicApiRequested },
+)(Api);

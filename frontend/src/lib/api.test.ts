@@ -4,8 +4,6 @@ process.env.REACT_APP_API_SERVICE_ENDPOINT = ENDPOINT;
 const EMAIL_ENDPOINT = 'https://email.endpoint.test.com';
 process.env.REACT_APP_EMAIL_SERVICE_ENDPOINT = EMAIL_ENDPOINT;
 
-jest.spyOn(console, 'log');
-
 describe('api lib', () => {
   const fetch = jest.fn();
   // @ts-ignore fetch does not exists on global
@@ -22,32 +20,33 @@ describe('api lib', () => {
 
   test('should call public api and get response', async () => {
     const { publicApi } = require('./api');
-    const data = 'data';
+    const data = { message: 'message' };
     const json = jest.fn();
     json.mockReturnValueOnce(Promise.resolve(data));
     const response = { json };
     fetch.mockReturnValueOnce(response);
 
-    await publicApi();
+    const result = await publicApi();
 
     expect(fetch).toHaveBeenCalledTimes(1);
     expect(fetch).toHaveBeenCalledWith(`${ENDPOINT}/api/public`, {
       cache: 'no-store',
       method: 'POST',
     });
-    expect(console.log).toHaveBeenCalledTimes(1);
-    expect(console.log).toHaveBeenCalledWith('Message:', data);
+    expect(result).toEqual(data.message);
   });
 
-  test('should call public api and handle error', async () => {
+  test('should call public api and throw error', async () => {
     const { publicApi } = require('./api');
     const error = new Error('error');
     fetch.mockReturnValueOnce(Promise.reject(error));
 
-    await publicApi();
-
-    expect(console.log).toHaveBeenCalledTimes(1);
-    expect(console.log).toHaveBeenCalledWith('error', error);
+    expect.assertions(1);
+    try {
+      await publicApi();
+    } catch (e) {
+      expect(e).toBe(error);
+    }
   });
 
   test('should call private api and get response', async () => {
@@ -55,13 +54,13 @@ describe('api lib', () => {
 
     const token = 'someIdToken';
     localStorage.getItem.mockReturnValueOnce(token);
-    const data = 'data';
+    const data = { message: 'message' };
     const json = jest.fn();
     json.mockReturnValueOnce(Promise.resolve(data));
-    const response = { json };
+    const response = { json, ok: true };
     fetch.mockReturnValueOnce(response);
 
-    await privateApi();
+    const result = await privateApi();
 
     expect(fetch).toHaveBeenCalledTimes(1);
     expect(fetch).toHaveBeenCalledWith(`${ENDPOINT}/api/private`, {
@@ -70,20 +69,40 @@ describe('api lib', () => {
       },
       method: 'POST',
     });
-    expect(console.log).toHaveBeenCalledTimes(1);
-    expect(console.log).toHaveBeenCalledWith('Token:', data);
+    expect(result).toEqual(data.message);
   });
 
-  test('should call private api and handle error', async () => {
+  test('should call private api and throw error on unauthorized', async () => {
+    const { privateApi } = require('./api');
+
+    const token = 'someIdToken';
+    localStorage.getItem.mockReturnValueOnce(token);
+    const data = { message: 'message' };
+    const json = jest.fn();
+    json.mockReturnValueOnce(Promise.resolve(data));
+    const response = { json, ok: false };
+    fetch.mockReturnValueOnce(response);
+
+    expect.assertions(1);
+    try {
+      await privateApi();
+    } catch (e) {
+      expect(e).toEqual(new Error(data.message));
+    }
+  });
+
+  test('should call private api and throw error', async () => {
     const { privateApi } = require('./api');
 
     const error = new Error('error');
     fetch.mockReturnValueOnce(Promise.reject(error));
 
-    await privateApi();
-
-    expect(console.log).toHaveBeenCalledTimes(1);
-    expect(console.log).toHaveBeenCalledWith('error', error);
+    expect.assertions(1);
+    try {
+      await privateApi();
+    } catch (e) {
+      expect(e).toBe(error);
+    }
   });
 
   test('should call email api and get response', async () => {
@@ -91,14 +110,14 @@ describe('api lib', () => {
 
     const token = 'someIdToken';
     localStorage.getItem.mockReturnValueOnce(token);
-    const data = 'data';
+    const data = { message: 'message' };
     const json = jest.fn();
     json.mockReturnValueOnce(Promise.resolve(data));
-    const response = { json };
+    const response = { json, ok: true };
     fetch.mockReturnValueOnce(response);
 
     const toAddress = 'to_address';
-    await emailApi(toAddress);
+    const result = await emailApi(toAddress);
 
     expect(fetch).toHaveBeenCalledTimes(1);
     expect(fetch).toHaveBeenCalledWith(`${EMAIL_ENDPOINT}/email`, {
@@ -108,19 +127,39 @@ describe('api lib', () => {
       },
       method: 'POST',
     });
-    expect(console.log).toHaveBeenCalledTimes(1);
-    expect(console.log).toHaveBeenCalledWith('Mail:', data);
+    expect(result).toEqual(data.message);
   });
 
-  test('should call email api and handle error', async () => {
+  test('should call email api and throw error on unauthorized', async () => {
+    const { emailApi } = require('./api');
+
+    const token = 'someIdToken';
+    localStorage.getItem.mockReturnValueOnce(token);
+    const data = { message: 'message' };
+    const json = jest.fn();
+    json.mockReturnValueOnce(Promise.resolve(data));
+    const response = { json, ok: false };
+    fetch.mockReturnValueOnce(response);
+
+    expect.assertions(1);
+    try {
+      await emailApi('');
+    } catch (e) {
+      expect(e).toEqual(new Error(data.message));
+    }
+  });
+
+  test('should call email api and throw error', async () => {
     const { emailApi } = require('./api');
 
     const error = new Error('error');
     fetch.mockReturnValueOnce(Promise.reject(error));
 
-    await emailApi('');
-
-    expect(console.log).toHaveBeenCalledTimes(1);
-    expect(console.log).toHaveBeenCalledWith('error', error);
+    expect.assertions(1);
+    try {
+      await emailApi('');
+    } catch (e) {
+      expect(e).toBe(error);
+    }
   });
 });

@@ -7,6 +7,7 @@
     "connected-react-router": "^4.3.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "redux-ignore": "^1.2.5",
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
