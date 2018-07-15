@@ -7,7 +7,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "JEST_JUNIT_OUTPUT=../../reports/junit/${npm_package_name}-test-results.xml jest --runInBand --ci",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "prettier": "prettier --write src/**/*.ts",
+    "prettier:ci": "prettier --list-different src/**/*.ts"
   },
   "dependencies": {
     "jsonwebtoken": "^8.3.0"

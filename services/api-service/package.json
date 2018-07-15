@@ -10,7 +10,9 @@
     "coverage": "jest --coverage",
     "deploy:dev": "serverless deploy --stage dev",
     "deploy:qa": "serverless deploy --stage qa",
-    "deploy:prod": "serverless deploy --stage prod"
+    "deploy:prod": "serverless deploy --stage prod",
+    "prettier": "prettier --write src/**/*.ts",
+    "prettier:ci": "prettier --list-different src/**/*.ts"
   },
   "dependencies": {
     "jsonwebtoken": "^8.3.0"
