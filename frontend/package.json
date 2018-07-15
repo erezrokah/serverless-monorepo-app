@@ -7,6 +7,7 @@
     "connected-react-router": "^4.3.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "redux-ignore": "^1.2.5",
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
@@ -36,7 +37,9 @@
     "deploy:prod": "serverless deploy --stage prod",
     "publish:dev": "serverless syncToS3 --stage dev && serverless invalidateCloudFrontCache --stage dev",
     "publish:qa": "serverless syncToS3 --stage qa && serverless invalidateCloudFrontCache --stage qa",
-    "publish:prod": "serverless syncToS3 --stage prod && serverless invalidateCloudFrontCache --stage prod"
+    "publish:prod": "serverless syncToS3 --stage prod && serverless invalidateCloudFrontCache --stage prod",
+    "prettier": "prettier --write src/**/*.ts src/**/*.tsx serverless-single-page-app-plugin/*.js",
+    "prettier:ci": "prettier --list-different src/**/*.ts src/**/*.tsx serverless-single-page-app-plugin/*.js"
   },
   "devDependencies": {
     "@types/auth0-js": "^8.11.2",

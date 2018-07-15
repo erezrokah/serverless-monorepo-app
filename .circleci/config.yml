@@ -61,6 +61,11 @@ aliases:
       name: Run Linter
       command: yarn lint
 
+  - &run_prettier
+    run:
+      name: Run Prettier
+      command: yarn prettier:ci
+
   - &run_tests
     run:
       name: Run Tests
@@ -98,6 +103,7 @@ jobs:
       - *install_dependencies
       - *save_cache
       - *run_linter
+      - *run_prettier
       - *run_tests
       - *store_test_results      
 

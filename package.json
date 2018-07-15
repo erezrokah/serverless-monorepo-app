@@ -15,7 +15,9 @@
     "deploy:prod": "lerna run --concurrency 1 deploy:prod",
     "publish:frontend:dev": "lerna run publish:dev --scope frontend",
     "publish:frontend:qa": "lerna run publish:qa --scope frontend",
-    "publish:frontend:prod": "lerna run publish:prod --scope frontend"
+    "publish:frontend:prod": "lerna run publish:prod --scope frontend",
+    "prettier": "lerna exec yarn prettier",
+    "prettier:ci": "lerna exec yarn prettier:ci"
   },
   "devDependencies": {
     "jest-junit": "^5.1.0",

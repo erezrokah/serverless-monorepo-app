@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Api Component should render correctly 1`] = `
+Array [
+  <button
+    className="ui button"
+    disabled={undefined}
+    id="privateApi"
+    onClick={[Function]}
+    role="button"
+    tabIndex={undefined}
+  >
+    Private Api
+  </button>,
+  <div
+    className="ui success message"
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        Private Api Result
+      </div>
+      <p>
+        result
+      </p>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Api Component should render correctly with error 1`] = `
+Array [
+  <button
+    className="ui button"
+    disabled={undefined}
+    id="privateApi"
+    onClick={[Function]}
+    role="button"
+    tabIndex={undefined}
+  >
+    Private Api
+  </button>,
+  <div
+    className="ui error message"
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        Error Accessing Private Api
+      </div>
+      <p>
+        error
+      </p>
+    </div>
+  </div>,
+]
+`;
