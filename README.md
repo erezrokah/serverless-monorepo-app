@@ -22,6 +22,7 @@ This application uses `Auth0` for authentication, `Sendgrid` for sending emails,
 - <https://serverless-stack.com/chapters/deploy-again.html>
 - <https://github.com/serverless-heaven/serverless-webpack>
 - <https://github.com/sbstjn/serverless-stack-output>
+- <https://github.com/wmonk/create-react-app-typescript>
 
 ## Prerequisites
 
