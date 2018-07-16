@@ -2,6 +2,7 @@ import { shallow } from 'enzyme';
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
+import { Form } from 'semantic-ui-react';
 import { emailApiRequested } from '../../actions/api';
 import ConnectedEmailApi, { EmailApi } from './EmailApi';
 
@@ -41,7 +42,7 @@ describe('Api Component', () => {
 
     wrapper.setState({ email });
 
-    wrapper.find('#apiForm').simulate('submit');
+    wrapper.find(Form).simulate('submit');
 
     expect(props.emailApiRequested).toHaveBeenCalledTimes(1);
     expect(props.emailApiRequested).toHaveBeenCalledWith(email);

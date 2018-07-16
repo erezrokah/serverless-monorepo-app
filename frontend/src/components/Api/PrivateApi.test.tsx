@@ -2,6 +2,7 @@ import { shallow } from 'enzyme';
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
+import { Button } from 'semantic-ui-react';
 import { privateApiRequested } from '../../actions/api';
 import ConnectedPrivateApi, { PrivateApi } from './PrivateApi';
 
@@ -37,7 +38,7 @@ describe('Api Component', () => {
   test('should call private api on button click', () => {
     const wrapper = shallow(<PrivateApi {...props} />);
 
-    wrapper.find('#privateApi').simulate('click');
+    wrapper.find(Button).simulate('click');
 
     expect(props.privateApiRequested).toHaveBeenCalledTimes(1);
   });

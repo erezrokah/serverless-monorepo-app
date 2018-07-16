@@ -4,7 +4,6 @@ exports[`Api Component should render correctly 1`] = `
 <form
   action={undefined}
   className="ui success form"
-  id="apiForm"
   onSubmit={[Function]}
 >
   <div
@@ -76,7 +75,6 @@ exports[`Api Component should render correctly with error 1`] = `
 <form
   action={undefined}
   className="ui error success form"
-  id="apiForm"
   onSubmit={[Function]}
 >
   <div

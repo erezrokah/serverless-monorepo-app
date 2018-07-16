@@ -4,6 +4,6 @@ exports[`Public Component should render correctly 1`] = `
 <div
   className="ui segment"
 >
-   This is a public page 
+  This is a public page
 </div>
 `;

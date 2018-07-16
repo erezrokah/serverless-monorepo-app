@@ -13,42 +13,38 @@ exports[`App renders correctly initialized=true 1`] = `
   className="ui container"
 >
   <div
-    style={
-      Object {
-        "margin": "0 auto",
-        "width": 1000,
-      }
-    }
+    className="ui segment"
   >
     <div
-      className="ui segment"
+      className="ui link list"
+      role="list"
     >
-      <ul>
-        <li>
-          <a
-            href="/public"
-            onClick={[Function]}
-          >
-             Public Page 
-          </a>
-        </li>
-        <li>
-          <a
-            href="/private"
-            onClick={[Function]}
-          >
-             Private Private 
-          </a>
-        </li>
-      </ul>
+      <a
+        className="active item"
+        data-value={undefined}
+        href="/public"
+        onClick={[Function]}
+        role="listitem"
+      >
+        Public Page
+      </a>
+      <a
+        className="item"
+        data-value={undefined}
+        href="/private"
+        onClick={[Function]}
+        role="listitem"
+      >
+        Private Page
+      </a>
     </div>
-    <div
-      className="ui segment"
-    >
-      Welcome!
-    </div>
-    <auth-status-component />
-    <api-component />
   </div>
+  <div
+    className="ui segment"
+  >
+    Welcome!
+  </div>
+  <auth-status-component />
+  <api-component />
 </div>
 `;

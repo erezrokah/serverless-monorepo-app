@@ -4,6 +4,6 @@ exports[`Private Component should render correctly 1`] = `
 <div
   className="ui segment"
 >
-   This is a private page 
+  This is a private page
 </div>
 `;

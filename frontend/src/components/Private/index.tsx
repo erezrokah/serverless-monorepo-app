@@ -4,7 +4,7 @@ import { Segment } from 'semantic-ui-react';
 
 export class Private extends React.Component<InjectedAuthReduxProps, any> {
   public render() {
-    return <Segment> This is a private page </Segment>;
+    return <Segment>This is a private page</Segment>;
   }
 }
 

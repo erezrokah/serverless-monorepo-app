@@ -29,7 +29,6 @@ export class EmailApi extends React.Component<IProps, IState> {
     const { error, inProgress, result } = this.props;
     return (
       <Form
-        id="apiForm"
         onSubmit={this.onEmailSend}
         loading={inProgress}
         error={!!error}

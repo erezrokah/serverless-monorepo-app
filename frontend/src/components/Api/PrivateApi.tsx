@@ -29,7 +29,6 @@ export class PrivateApi extends React.Component<IProps, any> {
     return (
       <React.Fragment>
         <Button
-          id="privateApi"
           onClick={this.props.privateApiRequested}
           loading={inProgress}
           disabled={inProgress}

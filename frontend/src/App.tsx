@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Link, Switch } from 'react-router-dom';
-import { Container, Segment } from 'semantic-ui-react';
+import { Container, List, Segment } from 'semantic-ui-react';
 import { syncAuthStateRequested as syncAuthState } from './actions/auth';
 import Api from './components/Api';
 import AuthStatus from './components/AuthStatus';
@@ -33,30 +33,37 @@ export class App extends React.Component<IProps, any> {
         </Container>
       );
     }
+    const { pathname } = this.props;
     return (
       <Container>
-        <div style={{ width: 1000, margin: '0 auto' }}>
-          <Segment>
-            <ul>
-              <li>
-                <Link to={paths.public}> Public Page </Link>
-              </li>
-              <li>
-                <Link to={paths.private}> Private Private </Link>
-              </li>
-            </ul>
-          </Segment>
-          <Switch>
-            {routes.Home}
-            {routes.Public}
-            {routes.Private}
-            {routes.Login}
-            {routes.Callback}
-            {routes.NotFound}
-          </Switch>
-          <AuthStatus />
-          <Api />
-        </div>
+        <Segment>
+          <List link={true}>
+            <List.Item
+              as={Link}
+              to={paths.public}
+              active={pathname === paths.public}
+            >
+              Public Page
+            </List.Item>
+            <List.Item
+              as={Link}
+              to={paths.private}
+              active={pathname === paths.private}
+            >
+              Private Page
+            </List.Item>
+          </List>
+        </Segment>
+        <Switch>
+          {routes.Home}
+          {routes.Public}
+          {routes.Private}
+          {routes.Login}
+          {routes.Callback}
+          {routes.NotFound}
+        </Switch>
+        <AuthStatus />
+        <Api />
       </Container>
     );
   }

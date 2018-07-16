@@ -5,12 +5,11 @@ Array [
   <button
     className="ui button"
     disabled={undefined}
-    id="privateApi"
     onClick={[Function]}
     role="button"
     tabIndex={undefined}
   >
-    Private Api
+    Public Api
   </button>,
   <div
     className="ui success message"
@@ -36,12 +35,11 @@ Array [
   <button
     className="ui button"
     disabled={undefined}
-    id="privateApi"
     onClick={[Function]}
     role="button"
     tabIndex={undefined}
   >
-    Private Api
+    Public Api
   </button>,
   <div
     className="ui error message"

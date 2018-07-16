@@ -29,12 +29,11 @@ export class PublicApi extends React.Component<IProps, any> {
     return (
       <React.Fragment>
         <Button
-          id="privateApi"
           onClick={this.props.publicApiRequested}
           loading={inProgress}
           disabled={inProgress}
         >
-          Private Api
+          Public Api
         </Button>
         {ResultComponent}
         {ErrorComponent}
