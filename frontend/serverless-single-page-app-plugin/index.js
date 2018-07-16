@@ -52,7 +52,6 @@ class ServerlessPlugin {
     if (!sterr) {
       this.serverless.cli.log('Successfully synced to the S3 bucket');
     } else {
-      this.serverless.cli.log(sterr);
       throw new Error('Failed syncing to the S3 bucket');
     }
   }
@@ -73,12 +72,13 @@ class ServerlessPlugin {
     const output = outputs.find(
       entry => entry.OutputKey === 'WebAppCloudFrontDistributionOutput',
     );
+
     if (output.OutputValue) {
       this.serverless.cli.log(`Web App Domain: ${output.OutputValue}`);
       return output.OutputValue;
-    } else {
-      this.serverless.cli.log('Web App Domain: Not Found');
     }
+    this.serverless.cli.log('Web App Domain: Not Found');
+    return undefined;
   }
 
   async invalidateCache() {
@@ -119,7 +119,6 @@ class ServerlessPlugin {
       if (!sterr) {
         this.serverless.cli.log('Successfully invalidated CloudFront cache');
       } else {
-        this.serverless.cli.log(sterr);
         throw new Error('Failed invalidating CloudFront cache');
       }
     } else {
