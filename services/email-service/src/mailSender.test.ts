@@ -30,7 +30,7 @@ describe('mailSender', () => {
     expect(sgMail.setApiKey).toHaveBeenCalledWith('');
   });
 
-  const badDataResponse = input => ({
+  const badDataResponse = (input: any) => ({
     body: JSON.stringify({
       input,
       message: 'Bad input data or missing email address.',

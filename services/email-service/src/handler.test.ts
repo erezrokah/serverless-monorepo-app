@@ -7,6 +7,10 @@ describe('handler', () => {
   const response = {};
   const error = new Error('some error');
 
+  const payload = { to_address: 'to@email.com' };
+  const event = { body: JSON.stringify(payload) };
+  const context: any = null;
+
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -14,9 +18,6 @@ describe('handler', () => {
   test('should call callback on response', async () => {
     sendMail.mockReturnValue(Promise.resolve({ response, error: null }));
 
-    const payload = { to_address: 'to@email.com' };
-    const event = { body: JSON.stringify(payload) };
-    const context: any = null;
     const callback = jest.fn();
 
     await sendEmail(event, context, callback);
@@ -30,9 +31,6 @@ describe('handler', () => {
   test('should call callback on error', async () => {
     sendMail.mockReturnValue(Promise.resolve({ response, error }));
 
-    const payload = { to_address: 'to@email.com' };
-    const event = { body: JSON.stringify(payload) };
-    const context: any = null;
     const callback = jest.fn();
 
     await sendEmail(event, context, callback);

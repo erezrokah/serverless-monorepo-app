@@ -21,9 +21,10 @@
   },
   "devDependencies": {
     "jest-junit": "^5.1.0",
-    "lerna": "^2.11.0",
+    "lerna": "^3.4.0",
     "prettier": "^1.13.7"
   },
   "author": "Erez Rokah",
-  "license": "MIT"
+  "license": "MIT",
+  "name": "serverless-monorepo-app"
 }

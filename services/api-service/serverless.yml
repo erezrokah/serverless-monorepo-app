@@ -1,10 +1,10 @@
-
 service: api-service
 
 plugins:
   - serverless-webpack
   - serverless-offline
   - serverless-stack-output
+  - serverless-plugin-tracing
 
 custom:
   defaultStage: dev
@@ -23,6 +23,15 @@ provider:
   runtime: nodejs8.10
   stage: ${self:custom.currentStage}
   region: ${self:custom.currentRegion}
+
+  tracing: true # enable tracing
+  iamRoleStatements:
+    - Effect: 'Allow' # xray permissions (required)
+      Action:
+        - 'xray:PutTraceSegments'
+        - 'xray:PutTelemetryRecords'
+      Resource:
+        - '*'
 
   environment:
     AUTH0_CLIENT_ID: ${file(../common/environment/config.${self:custom.currentStage}.json):AUTH0_CLIENT_ID}
@@ -77,5 +86,5 @@ resources:
 package:
   individually: true
   exclude:
-  - coverage/**
-  - .circleci/**
+    - coverage/**
+    - .circleci/**
