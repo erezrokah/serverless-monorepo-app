@@ -1,9 +1,11 @@
 import AWS = require('aws-sdk');
 import fetch from 'node-fetch';
 
-const s3 = new AWS.S3();
+const Bucket = process.env.BUCKET || '';
 
 export const saveFile = async (body: string | null) => {
+  const s3 = new AWS.S3();
+
   let fileUrl = '';
   let key = '';
   if (body) {
@@ -20,11 +22,11 @@ export const saveFile = async (body: string | null) => {
     try {
       const fetchResponse = await fetch(fileUrl);
       if (fetchResponse.ok) {
-        const blob = await fetchResponse.buffer();
+        const buffer = await fetchResponse.buffer();
         await s3
           .putObject({
-            Body: blob,
-            Bucket: process.env.BUCKET || '',
+            Body: buffer,
+            Bucket,
             Key: key,
           })
           .promise();

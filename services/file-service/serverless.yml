@@ -46,6 +46,7 @@ functions:
       - http:
           path: save
           method: post
+          cors: true
     environment:
       BUCKET: ${self:custom.s3Bucket}
 
