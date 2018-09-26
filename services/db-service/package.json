@@ -26,6 +26,7 @@
     "dotenv": "^6.0.0",
     "fs-extra": "^7.0.0",
     "jest": "^23.6.0",
+    "mockdate": "^2.0.2",
     "serverless-offline": "^3.25.14",
     "serverless-plugin-tracing": "^2.0.0",
     "serverless-stack-output": "^0.2.3",
