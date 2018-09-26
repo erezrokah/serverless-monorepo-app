@@ -20,7 +20,7 @@ export interface IRouterState extends RouterState {
     search: string;
     hash: string;
     key: string;
-    state?: { from: string };
+    state: { from: string };
   };
 }
 

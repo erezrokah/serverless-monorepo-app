@@ -26,5 +26,8 @@
   },
   "author": "Erez Rokah",
   "license": "MIT",
-  "name": "serverless-monorepo-app"
+  "name": "serverless-monorepo-app",
+  "resolutions": {
+    "@types/react": "16.4.14"
+  }
 }

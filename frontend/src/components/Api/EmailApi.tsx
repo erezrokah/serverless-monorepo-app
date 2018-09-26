@@ -57,7 +57,7 @@ export class EmailApi extends React.Component<IProps, IState> {
   }
 
   private handleChange = (
-    _: React.SyntheticEvent,
+    _: React.SyntheticEvent<any>,
     { name, value }: IEventProps,
   ) => this.setState({ [name]: value });
 
