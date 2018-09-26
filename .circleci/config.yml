@@ -4,11 +4,10 @@ aliases:
   - &container_config
     docker:
       - image: circleci/node:carbon
-      
+
     working_directory: ~/repo
 
-  - &checkout
-    checkout
+  - &checkout checkout
 
   - &build_only_filters
     filters:
@@ -35,6 +34,8 @@ aliases:
         - services/common/node_modules
         - services/email-service/node_modules
         - services/api-service/node_modules
+        - services/db-service/node_modules
+        - services/file-service/node_modules
       key: dependencies-cache-{{ checksum "yarn.lock" }}
 
   - &restore_cache
@@ -92,7 +93,7 @@ aliases:
         curl -O https://bootstrap.pypa.io/get-pip.py
         python3.4 get-pip.py --user
         pip install awscli --upgrade --user
-        
+
 jobs:
   build:
     <<: *container_config
@@ -105,7 +106,7 @@ jobs:
       - *run_linter
       - *run_prettier
       - *run_tests
-      - *store_test_results      
+      - *store_test_results
 
   deploy-qa:
     <<: *container_config
@@ -119,7 +120,7 @@ jobs:
 
       - run:
           name: Setup QA Services Environment
-          command: >          
+          command: >
             sed -i "s/REGION_VALUE/$QA_REGION/g" services/common/environment/config.example.json &&
             sed -i "s/AUTH0_CLIENT_ID_VALUE/$QA_AUTH0_CLIENT_ID/g" services/common/environment/config.example.json &&
             mv services/common/environment/config.example.json services/common/environment/config.qa.json &&            
@@ -134,7 +135,7 @@ jobs:
 
       - run:
           name: Setup QA frontend Environment
-          command: >          
+          command: >
             echo "REACT_APP_AUTH0_AUDIENCE=$QA_AUTH0_AUDIENCE" >> frontend/.env.production.local &&
             echo "REACT_APP_AUTH0_CLIENT_ID=$QA_AUTH0_CLIENT_ID" >> frontend/.env.production.local &&
             echo "REACT_APP_AUTH0_DOMAIM=$QA_AUTH0_DOMAIM" >> frontend/.env.production.local &&
@@ -174,7 +175,7 @@ jobs:
 
       - run:
           name: Setup PROD frontend Environment
-          command: >          
+          command: >
             echo "REACT_APP_AUTH0_AUDIENCE=$PROD_AUTH0_AUDIENCE" >> frontend/.env.production.local &&
             echo "REACT_APP_AUTH0_CLIENT_ID=$PROD_AUTH0_CLIENT_ID" >> frontend/.env.production.local &&
             echo "REACT_APP_AUTH0_DOMAIM=$PROD_AUTH0_DOMAIM" >> frontend/.env.production.local &&
@@ -187,26 +188,26 @@ jobs:
           command: yarn publish:frontend:prod
 
 workflows:
-      version: 2
-      build-only:
-        jobs:
-          - build:
-              <<: *build_only_filters
+  version: 2
+  build-only:
+    jobs:
+      - build:
+          <<: *build_only_filters
 
-      build-and-deploy-qa:
-        jobs:
-          - build:
-              <<: *build_and_deploy_qa_filters
-          - deploy-qa:
-              requires:
-                - build
-              <<: *build_and_deploy_qa_filters
+  build-and-deploy-qa:
+    jobs:
+      - build:
+          <<: *build_and_deploy_qa_filters
+      - deploy-qa:
+          requires:
+            - build
+          <<: *build_and_deploy_qa_filters
 
-      build-and-deploy-prod:
-        jobs:
-          - build:
-              <<: *build_and_deploy_prod_filters
-          - deploy-prod:
-              requires:
-                - build
-              <<: *build_and_deploy_prod_filters  
+  build-and-deploy-prod:
+    jobs:
+      - build:
+          <<: *build_and_deploy_prod_filters
+      - deploy-prod:
+          requires:
+            - build
+          <<: *build_and_deploy_prod_filters
