@@ -19,5 +19,15 @@ exports[`Api Component should render correctly 1`] = `
   >
     <PrivateApi />
   </div>
+  <div
+    className="ui segment"
+  >
+    <FileApi />
+  </div>
+  <div
+    className="ui segment"
+  >
+    <DbApi />
+  </div>
 </div>
 `;

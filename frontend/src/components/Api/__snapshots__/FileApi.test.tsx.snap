@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Email Api Component should render correctly 1`] = `
+exports[`File Api Component should render correctly 1`] = `
 <form
   action={undefined}
   className="ui success form"
@@ -18,13 +18,33 @@ exports[`Email Api Component should render correctly 1`] = `
       >
         <input
           disabled={undefined}
-          id="emailApi"
-          name="email"
+          id="fileUrl"
+          name="fileUrl"
           onChange={[Function]}
-          placeholder="Destination Email"
+          placeholder="File Url"
           required={true}
           tabIndex={undefined}
-          type="email"
+          type="url"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="required field"
+    >
+      <div
+        className="ui input"
+        content={undefined}
+      >
+        <input
+          disabled={undefined}
+          id="fileName"
+          name="fileName"
+          onChange={[Function]}
+          placeholder="File Name"
+          required={true}
+          tabIndex={undefined}
+          type="text"
           value=""
         />
       </div>
@@ -36,7 +56,7 @@ exports[`Email Api Component should render correctly 1`] = `
       role="button"
       tabIndex={undefined}
     >
-      Send Email
+      Save File
     </button>
   </div>
   <div
@@ -48,7 +68,7 @@ exports[`Email Api Component should render correctly 1`] = `
       <div
         className="header"
       >
-        Email Api Result
+        File Api Result
       </div>
       <p>
         result
@@ -64,14 +84,14 @@ exports[`Email Api Component should render correctly 1`] = `
       <div
         className="header"
       >
-        Error Sending Email
+        Error Saving File
       </div>
     </div>
   </div>
 </form>
 `;
 
-exports[`Email Api Component should render correctly with error 1`] = `
+exports[`File Api Component should render correctly with error 1`] = `
 <form
   action={undefined}
   className="ui error success form"
@@ -89,13 +109,33 @@ exports[`Email Api Component should render correctly with error 1`] = `
       >
         <input
           disabled={undefined}
-          id="emailApi"
-          name="email"
+          id="fileUrl"
+          name="fileUrl"
           onChange={[Function]}
-          placeholder="Destination Email"
+          placeholder="File Url"
           required={true}
           tabIndex={undefined}
-          type="email"
+          type="url"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="required field"
+    >
+      <div
+        className="ui input"
+        content={undefined}
+      >
+        <input
+          disabled={undefined}
+          id="fileName"
+          name="fileName"
+          onChange={[Function]}
+          placeholder="File Name"
+          required={true}
+          tabIndex={undefined}
+          type="text"
           value=""
         />
       </div>
@@ -107,7 +147,7 @@ exports[`Email Api Component should render correctly with error 1`] = `
       role="button"
       tabIndex={undefined}
     >
-      Send Email
+      Save File
     </button>
   </div>
   <div
@@ -119,7 +159,7 @@ exports[`Email Api Component should render correctly with error 1`] = `
       <div
         className="header"
       >
-        Email Api Result
+        File Api Result
       </div>
       <p>
         result
@@ -135,7 +175,7 @@ exports[`Email Api Component should render correctly with error 1`] = `
       <div
         className="header"
       >
-        Error Sending Email
+        Error Saving File
       </div>
       <p>
         error

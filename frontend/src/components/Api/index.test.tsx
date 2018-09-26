@@ -5,6 +5,8 @@ import Api from './';
 jest.mock('./EmailApi', () => ({ default: 'EmailApi' }));
 jest.mock('./PrivateApi', () => ({ default: 'PrivateApi' }));
 jest.mock('./PublicApi', () => ({ default: 'PublicApi' }));
+jest.mock('./DbApi', () => ({ default: 'DbApi' }));
+jest.mock('./FileApi', () => ({ default: 'FileApi' }));
 
 describe('Api Component', () => {
   test('should render correctly', () => {

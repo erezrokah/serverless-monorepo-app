@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Email Api Component should render correctly 1`] = `
+exports[`Db Api Component should render correctly 1`] = `
 <form
   action={undefined}
   className="ui success form"
@@ -18,13 +18,13 @@ exports[`Email Api Component should render correctly 1`] = `
       >
         <input
           disabled={undefined}
-          id="emailApi"
-          name="email"
+          id="dbApi"
+          name="text"
           onChange={[Function]}
-          placeholder="Destination Email"
+          placeholder="Todos item text"
           required={true}
           tabIndex={undefined}
-          type="email"
+          type="text"
           value=""
         />
       </div>
@@ -36,7 +36,7 @@ exports[`Email Api Component should render correctly 1`] = `
       role="button"
       tabIndex={undefined}
     >
-      Send Email
+      Save Todos Item
     </button>
   </div>
   <div
@@ -48,7 +48,7 @@ exports[`Email Api Component should render correctly 1`] = `
       <div
         className="header"
       >
-        Email Api Result
+        Todos Api Result
       </div>
       <p>
         result
@@ -64,14 +64,14 @@ exports[`Email Api Component should render correctly 1`] = `
       <div
         className="header"
       >
-        Error Sending Email
+        Error Saving File
       </div>
     </div>
   </div>
 </form>
 `;
 
-exports[`Email Api Component should render correctly with error 1`] = `
+exports[`Db Api Component should render correctly with error 1`] = `
 <form
   action={undefined}
   className="ui error success form"
@@ -89,13 +89,13 @@ exports[`Email Api Component should render correctly with error 1`] = `
       >
         <input
           disabled={undefined}
-          id="emailApi"
-          name="email"
+          id="dbApi"
+          name="text"
           onChange={[Function]}
-          placeholder="Destination Email"
+          placeholder="Todos item text"
           required={true}
           tabIndex={undefined}
-          type="email"
+          type="text"
           value=""
         />
       </div>
@@ -107,7 +107,7 @@ exports[`Email Api Component should render correctly with error 1`] = `
       role="button"
       tabIndex={undefined}
     >
-      Send Email
+      Save Todos Item
     </button>
   </div>
   <div
@@ -119,7 +119,7 @@ exports[`Email Api Component should render correctly with error 1`] = `
       <div
         className="header"
       >
-        Email Api Result
+        Todos Api Result
       </div>
       <p>
         result
@@ -135,7 +135,7 @@ exports[`Email Api Component should render correctly with error 1`] = `
       <div
         className="header"
       >
-        Error Sending Email
+        Error Saving File
       </div>
       <p>
         error

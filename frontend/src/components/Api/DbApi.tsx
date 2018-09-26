@@ -25,7 +25,7 @@ export class DbApi extends React.Component<IProps, IState> {
   }
 
   public render() {
-    const { fileUrl } = this.state;
+    const { text } = this.state;
     const { error, inProgress, result } = this.props;
     return (
       <Form
@@ -39,10 +39,10 @@ export class DbApi extends React.Component<IProps, IState> {
             placeholder="Todos item text"
             name="text"
             type="text"
-            value={fileUrl}
+            value={text}
             onChange={this.handleChange}
             required={true}
-            id="text"
+            id="dbApi"
           />
 
           <Button content="Save Todos Item" />
