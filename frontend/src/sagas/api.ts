@@ -1,13 +1,21 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import * as actions from '../actions/api';
 import * as types from '../actions/types';
-import { emailApi, privateApi, publicApi } from '../lib/api';
+import {
+  createTodosItem,
+  emailApi,
+  privateApi,
+  publicApi,
+  saveFile,
+} from '../lib/api';
 import { IActionWithMeta } from '../types/redux';
 
 const handlers = {
   [actions.apiMetaTypes.email]: emailApi,
   [actions.apiMetaTypes.private]: privateApi,
   [actions.apiMetaTypes.public]: publicApi,
+  [actions.apiMetaTypes.file]: saveFile,
+  [actions.apiMetaTypes.dbCreate]: createTodosItem,
 };
 
 export const getHandler = (type: string) => {

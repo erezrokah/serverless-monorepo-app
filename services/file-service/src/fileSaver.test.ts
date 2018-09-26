@@ -10,6 +10,11 @@ jest.spyOn(console, 'log');
 process.env.BUCKET = 'Bucket';
 
 describe('fileSaver', () => {
+  const headers = {
+    'Access-Control-Allow-Credentials': true,
+    'Access-Control-Allow-Origin': '*',
+  };
+
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -19,6 +24,7 @@ describe('fileSaver', () => {
       input,
       message: 'Bad input data or missing file url.',
     }),
+    headers,
     statusCode: 422,
   });
 
@@ -107,6 +113,7 @@ describe('fileSaver', () => {
         input: body,
         message: 'File saved',
       }),
+      headers,
       statusCode: 200,
     });
     expect(error).toBeNull();
@@ -139,6 +146,7 @@ describe('fileSaver', () => {
         input: body,
         message: 'Fetch failed',
       }),
+      headers,
       statusCode: 500,
     });
     const expectedError = new Error(
@@ -171,6 +179,7 @@ describe('fileSaver', () => {
         input: body,
         message: 'Unknown Error',
       }),
+      headers,
       statusCode: 500,
     });
 

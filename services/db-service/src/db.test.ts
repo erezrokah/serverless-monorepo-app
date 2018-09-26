@@ -11,6 +11,11 @@ jest.mock('uuid/v1');
 process.env.DYNAMODB_TABLE = 'TableName';
 
 describe('db', () => {
+  const headers = {
+    'Access-Control-Allow-Credentials': true,
+    'Access-Control-Allow-Origin': '*',
+  };
+
   const MockDate = require('mockdate');
 
   beforeEach(() => {
@@ -29,6 +34,7 @@ describe('db', () => {
       input,
       message: 'Bad input data or missing text',
     }),
+    headers,
     statusCode: 422,
   });
 
@@ -107,6 +113,7 @@ describe('db', () => {
 
     expect(response).toEqual({
       body: JSON.stringify(params.Item),
+      headers,
       statusCode: 200,
     });
     expect(error).toBeNull();
@@ -130,6 +137,7 @@ describe('db', () => {
         input: body,
         message: "Couldn't create the todo item.",
       }),
+      headers,
       statusCode: 500,
     });
 

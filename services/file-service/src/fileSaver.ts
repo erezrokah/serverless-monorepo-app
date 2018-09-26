@@ -3,6 +3,13 @@ import fetch from 'node-fetch';
 
 const Bucket = process.env.BUCKET || '';
 
+const headers = {
+  /* Required for cookies, authorization headers with HTTPS */
+  'Access-Control-Allow-Credentials': true,
+  /* Required for CORS support to work */
+  'Access-Control-Allow-Origin': '*',
+};
+
 export const saveFile = async (body: string | null) => {
   const s3 = new AWS.S3();
 
@@ -35,6 +42,7 @@ export const saveFile = async (body: string | null) => {
             input: body,
             message: 'File saved',
           }),
+          headers,
           statusCode: 200,
         };
         return { response, error: null };
@@ -44,6 +52,7 @@ export const saveFile = async (body: string | null) => {
             input: body,
             message: 'Fetch failed',
           }),
+          headers,
           statusCode: 500,
         };
         const error = new Error(
@@ -60,6 +69,7 @@ export const saveFile = async (body: string | null) => {
           input: body,
           message: 'Unknown Error',
         }),
+        headers,
         statusCode: 500,
       };
       return { response, error };
@@ -70,6 +80,7 @@ export const saveFile = async (body: string | null) => {
         input: body,
         message: 'Bad input data or missing file url.',
       }),
+      headers,
       statusCode: 422,
     };
     return { response, error: null };

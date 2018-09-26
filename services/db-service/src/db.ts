@@ -3,6 +3,13 @@ import uuid = require('uuid/v1');
 
 const TableName = process.env.DYNAMODB_TABLE || '';
 
+const headers = {
+  /* Required for cookies, authorization headers with HTTPS */
+  'Access-Control-Allow-Credentials': true,
+  /* Required for CORS support to work */
+  'Access-Control-Allow-Origin': '*',
+};
+
 export const create = async (body: string | null) => {
   const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
@@ -36,6 +43,7 @@ export const create = async (body: string | null) => {
       // create a response
       const response = {
         body: JSON.stringify(params.Item),
+        headers,
         statusCode: 200,
       };
       return { response, error: null };
@@ -46,6 +54,7 @@ export const create = async (body: string | null) => {
           input: body,
           message: "Couldn't create the todo item.",
         }),
+        headers,
         statusCode: 500,
       };
       return { response, error };
@@ -56,6 +65,7 @@ export const create = async (body: string | null) => {
         input: body,
         message: 'Bad input data or missing text',
       }),
+      headers,
       statusCode: 422,
     };
     return { response, error: null };
