@@ -1,0 +1,43 @@
+{
+  "name": "file-service",
+  "version": "0.0.1",
+  "description": "File Service",
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "JEST_JUNIT_OUTPUT=../../reports/junit/${npm_package_name}-test-results.xml jest --runInBand --ci",
+    "test:e2e": "JEST_JUNIT_OUTPUT=../../reports/junit/${npm_package_name}-e2e-test-results.xml jest --config=jest.config.e2e.js --runInBand --ci",
+    "coverage": "jest --coverage",
+    "deploy:dev": "serverless deploy --stage dev",
+    "deploy:qa": "serverless deploy --stage qa",
+    "deploy:prod": "serverless deploy --stage prod",
+    "prettier": "prettier --write src/**/*.ts",
+    "prettier:ci": "prettier --list-different src/**/*.ts"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.320.0",
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.13",
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.10.3",
+    "@types/node-fetch": "^2.1.2",
+    "dotenv": "^6.0.0",
+    "fs-extra": "^7.0.0",
+    "jest": "^23.6.0",
+    "serverless-offline": "^3.25.14",
+    "serverless-plugin-tracing": "^2.0.0",
+    "serverless-stack-output": "^0.2.3",
+    "serverless-webpack": "^5.2.0",
+    "ts-jest": "22.4.6",
+    "ts-loader": "^5.1.1",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.19.1",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "author": "Erez Rokah",
+  "license": "MIT"
+}

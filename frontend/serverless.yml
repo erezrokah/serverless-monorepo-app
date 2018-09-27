@@ -1,10 +1,11 @@
 service: frontend-app
 
-frameworkVersion: ">=1.2.0 <2.0.0"
+frameworkVersion: '>=1.2.0 <2.0.0'
 
 plugins:
   - serverless-single-page-app-plugin
   - serverless-stack-output
+  - serverless-plugin-tracing
 
 custom:
   defaultStage: dev
@@ -21,6 +22,15 @@ provider:
   runtime: nodejs8.10
   stage: ${self:custom.currentStage}
   region: ${self:custom.currentRegion}
+
+  tracing: true # enable tracing
+  iamRoleStatements:
+    - Effect: 'Allow' # xray permissions (required)
+      Action:
+        - 'xray:PutTraceSegments'
+        - 'xray:PutTelemetryRecords'
+      Resource:
+        - '*'
 
 resources:
   Resources:
@@ -43,9 +53,9 @@ resources:
           Statement:
             - Sid: PublicReadGetObject
               Effect: Allow
-              Principal: "*"
+              Principal: '*'
               Action:
-              - s3:GetObject
+                - s3:GetObject
               Resource: arn:aws:s3:::${self:custom.s3Bucket}/*
     ## Specifying the CloudFront Distribution to server your Web Application
     WebAppCloudFrontDistribution:
@@ -105,4 +115,4 @@ resources:
   Outputs:
     WebAppCloudFrontDistributionOutput:
       Value:
-        'Fn::GetAtt': [ WebAppCloudFrontDistribution, DomainName ]
+        'Fn::GetAtt': [WebAppCloudFrontDistribution, DomainName]

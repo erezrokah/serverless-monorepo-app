@@ -53,4 +53,23 @@ describe('Api Actions', () => {
       type: types.API_REQUESTED,
     }).toEqual(actions.publicApiRequested());
   });
+
+  test('fileApiRequested', () => {
+    const fileUrl = 'fileUrl';
+    const key = 'key';
+    expect({
+      meta: { type: actions.apiMetaTypes.file },
+      payload: { fileUrl, key },
+      type: types.API_REQUESTED,
+    }).toEqual(actions.fileApiRequested(fileUrl, key));
+  });
+
+  test('dbCreateApiRequested', () => {
+    const text = 'text';
+    expect({
+      meta: { type: actions.apiMetaTypes.dbCreate },
+      payload: text,
+      type: types.API_REQUESTED,
+    }).toEqual(actions.dbCreateApiRequested(text));
+  });
 });

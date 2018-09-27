@@ -1,7 +1,9 @@
 {
-  "lerna": "2.11.0",
   "version": "23.2.0",
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "packages": ["services/*", "frontend"]
+  "packages": [
+    "services/*",
+    "frontend"
+  ]
 }

@@ -1,0 +1,76 @@
+service: db-service
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-stack-output
+  - serverless-plugin-tracing
+
+custom:
+  defaultStage: dev
+  currentStage: ${opt:stage, self:custom.defaultStage}
+  currentRegion: ${file(../common/environment/config.${self:custom.currentStage}.json):region}
+
+  output:
+    handler: ../../scripts/stackOutput.handler
+
+  webpack:
+    includeModules: true
+    packager: yarn
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.currentStage}
+  region: ${self:custom.currentRegion}
+
+  memorySize: 256
+
+  tracing: true # enable tracing
+
+  environment:
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+
+  iamRoleStatements:
+    - Effect: 'Allow' # xray permissions (required)
+      Action:
+        - 'xray:PutTraceSegments'
+        - 'xray:PutTelemetryRecords'
+      Resource:
+        - '*'
+
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: 'arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}'
+
+functions:
+  create:
+    handler: src/create.create
+    events:
+      - http:
+          path: todos
+          method: post
+          cors: true
+
+resources:
+  Resources:
+    TodosDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}

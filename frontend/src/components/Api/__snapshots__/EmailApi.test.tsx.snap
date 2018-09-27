@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Api Component should render correctly 1`] = `
+exports[`Email Api Component should render correctly 1`] = `
 <form
   action={undefined}
   className="ui success form"
@@ -71,7 +71,7 @@ exports[`Api Component should render correctly 1`] = `
 </form>
 `;
 
-exports[`Api Component should render correctly with error 1`] = `
+exports[`Email Api Component should render correctly with error 1`] = `
 <form
   action={undefined}
   className="ui error success form"

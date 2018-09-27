@@ -1,9 +1,6 @@
 import { publicEndpoint } from './publicEndpointHandler';
 
 describe('private endpoint handler', () => {
-  const response = {};
-  const error = new Error('some error');
-
   beforeEach(() => {
     jest.clearAllMocks();
   });

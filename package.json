@@ -8,7 +8,8 @@
     "build:frontend": "lerna run build --scope frontend",
     "lint": "lerna exec yarn lint",
     "test": "lerna exec yarn test",
-    "test:ci": "lerna exec yarn test:ci",
+    "test:ci": "lerna exec --concurrency 1 yarn test:ci",
+    "test:e2e": "lerna run test:e2e",
     "coverage": "lerna exec --concurrency 1 yarn coverage",
     "deploy:dev": "lerna run --concurrency 1 deploy:dev",
     "deploy:qa": "lerna run --concurrency 1 deploy:qa",
@@ -21,9 +22,13 @@
   },
   "devDependencies": {
     "jest-junit": "^5.1.0",
-    "lerna": "^2.11.0",
+    "lerna": "^3.4.0",
     "prettier": "^1.13.7"
   },
   "author": "Erez Rokah",
-  "license": "MIT"
+  "license": "MIT",
+  "name": "serverless-monorepo-app",
+  "resolutions": {
+    "@types/react": "16.4.14"
+  }
 }

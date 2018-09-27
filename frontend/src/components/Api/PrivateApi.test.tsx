@@ -18,7 +18,7 @@ const props = {
   result: 'result',
 };
 
-describe('Api Component', () => {
+describe('Private Api Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });

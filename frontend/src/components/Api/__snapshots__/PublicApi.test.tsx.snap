@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Api Component should render correctly 1`] = `
+exports[`Public Api Component should render correctly 1`] = `
 Array [
   <button
     className="ui button"
@@ -30,7 +30,7 @@ Array [
 ]
 `;
 
-exports[`Api Component should render correctly with error 1`] = `
+exports[`Public Api Component should render correctly with error 1`] = `
 Array [
   <button
     className="ui button"

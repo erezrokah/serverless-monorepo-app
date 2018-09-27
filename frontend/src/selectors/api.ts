@@ -12,3 +12,9 @@ export const privateApiSelector = (state: IState) =>
 
 export const publicApiSelector = (state: IState) =>
   apiStateSelector(state, apiMetaTypes.public);
+
+export const fileApiSelector = (state: IState) =>
+  apiStateSelector(state, apiMetaTypes.file);
+
+export const dbCreateApiSelector = (state: IState) =>
+  apiStateSelector(state, apiMetaTypes.dbCreate);

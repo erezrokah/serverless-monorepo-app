@@ -1,0 +1,61 @@
+service: file-service
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-stack-output
+  - serverless-plugin-tracing
+
+custom:
+  defaultStage: dev
+  currentStage: ${opt:stage, self:custom.defaultStage}
+  currentRegion: ${file(../common/environment/config.${self:custom.currentStage}.json):region}
+  s3Bucket: file-service-s3-bucket-${self:custom.currentStage}
+
+  output:
+    handler: ../../scripts/stackOutput.handler
+
+  webpack:
+    includeModules: true
+    packager: yarn
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.currentStage}
+  region: ${self:custom.currentRegion}
+
+  memorySize: 256
+
+  tracing: true # enable tracing
+  iamRoleStatements:
+    - Effect: 'Allow' # xray permissions (required)
+      Action:
+        - 'xray:PutTraceSegments'
+        - 'xray:PutTelemetryRecords'
+      Resource:
+        - '*'
+
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+      Resource: 'arn:aws:s3:::${self:custom.s3Bucket}/*'
+
+functions:
+  save:
+    handler: src/handler.save
+    events:
+      - http:
+          path: save
+          method: post
+          cors: true
+    environment:
+      BUCKET: ${self:custom.s3Bucket}
+
+resources:
+  Resources:
+    FileServiceBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.s3Bucket}
+        AccessControl: Private

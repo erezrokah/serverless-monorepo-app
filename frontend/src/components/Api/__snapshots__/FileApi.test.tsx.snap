@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`File Api Component should render correctly 1`] = `
+<form
+  action={undefined}
+  className="ui success form"
+  onSubmit={[Function]}
+>
+  <div
+    className="fields"
+  >
+    <div
+      className="required field"
+    >
+      <div
+        className="ui input"
+        content={undefined}
+      >
+        <input
+          disabled={undefined}
+          id="fileUrl"
+          name="fileUrl"
+          onChange={[Function]}
+          placeholder="File Url"
+          required={true}
+          tabIndex={undefined}
+          type="url"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="required field"
+    >
+      <div
+        className="ui input"
+        content={undefined}
+      >
+        <input
+          disabled={undefined}
+          id="fileName"
+          name="fileName"
+          onChange={[Function]}
+          placeholder="File Name"
+          required={true}
+          tabIndex={undefined}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      className="ui button"
+      disabled={undefined}
+      onClick={[Function]}
+      role="button"
+      tabIndex={undefined}
+    >
+      Save File
+    </button>
+  </div>
+  <div
+    className="ui success message"
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        File Api Result
+      </div>
+      <p>
+        result
+      </p>
+    </div>
+  </div>
+  <div
+    className="ui error message"
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        Error Saving File
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`File Api Component should render correctly with error 1`] = `
+<form
+  action={undefined}
+  className="ui error success form"
+  onSubmit={[Function]}
+>
+  <div
+    className="fields"
+  >
+    <div
+      className="required field"
+    >
+      <div
+        className="ui input"
+        content={undefined}
+      >
+        <input
+          disabled={undefined}
+          id="fileUrl"
+          name="fileUrl"
+          onChange={[Function]}
+          placeholder="File Url"
+          required={true}
+          tabIndex={undefined}
+          type="url"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="required field"
+    >
+      <div
+        className="ui input"
+        content={undefined}
+      >
+        <input
+          disabled={undefined}
+          id="fileName"
+          name="fileName"
+          onChange={[Function]}
+          placeholder="File Name"
+          required={true}
+          tabIndex={undefined}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      className="ui button"
+      disabled={undefined}
+      onClick={[Function]}
+      role="button"
+      tabIndex={undefined}
+    >
+      Save File
+    </button>
+  </div>
+  <div
+    className="ui success message"
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        File Api Result
+      </div>
+      <p>
+        result
+      </p>
+    </div>
+  </div>
+  <div
+    className="ui error message"
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        Error Saving File
+      </div>
+      <p>
+        error
+      </p>
+    </div>
+  </div>
+</form>
+`;

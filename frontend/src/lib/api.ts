@@ -6,6 +6,11 @@ const PRIVATE_ENDPOINT = `${ENDPOINT}/api/private`;
 const EMAIL_ENDPOINT = `${process.env.REACT_APP_EMAIL_SERVICE_ENDPOINT ||
   ''}/email`;
 
+const FILE_ENDPOINT = `${process.env.REACT_APP_FILE_SERVICE_ENDPOINT ||
+  ''}/save`;
+
+const DB_ENDPOINT = `${process.env.REACT_APP_DB_SERVICE_ENDPOINT || ''}/todos`;
+
 export const checkStatus = (response: Response, message: string) => {
   if (response.ok) {
     return response;
@@ -54,4 +59,33 @@ export const emailApi = async (toAddress: string) => {
   checkStatus(response, message);
 
   return message;
+};
+
+interface IFileApiPayload {
+  fileUrl: string;
+  key: string;
+}
+
+export const saveFile = async ({ fileUrl, key }: IFileApiPayload) => {
+  const response = await fetch(FILE_ENDPOINT, {
+    body: JSON.stringify({ file_url: fileUrl, key }),
+    method: 'POST',
+  });
+
+  const { message } = await response.json();
+  checkStatus(response, message);
+
+  return message;
+};
+
+export const createTodosItem = async (text: string) => {
+  const response = await fetch(DB_ENDPOINT, {
+    body: JSON.stringify({ text }),
+    method: 'POST',
+  });
+
+  const item = await response.json();
+  checkStatus(response, item);
+
+  return JSON.stringify(item);
 };
