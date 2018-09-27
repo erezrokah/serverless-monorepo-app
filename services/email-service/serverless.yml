@@ -24,6 +24,8 @@ provider:
   stage: ${self:custom.currentStage}
   region: ${self:custom.currentRegion}
 
+  memorySize: 256
+
   tracing: true # enable tracing
   iamRoleStatements:
     - Effect: 'Allow' # xray permissions (required)
