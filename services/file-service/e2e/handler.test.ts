@@ -6,7 +6,6 @@ AWS.config.update({ region });
 
 const Bucket = 'file-service-s3-bucket-dev';
 
-// tslint:disable-next-line:ban-types
 const listAllKeys = async token => {
   const opts = { Bucket, ContinuationToken: null };
   if (token) {
