@@ -8,7 +8,7 @@
     "build:frontend": "lerna run build --scope frontend",
     "lint": "lerna exec yarn lint",
     "test": "lerna exec yarn test",
-    "test:ci": "lerna exec yarn test:ci",
+    "test:ci": "lerna exec --concurrency 1 yarn test:ci",
     "test:e2e": "lerna run test:e2e",
     "coverage": "lerna exec --concurrency 1 yarn coverage",
     "deploy:dev": "lerna run --concurrency 1 deploy:dev",
