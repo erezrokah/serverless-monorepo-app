@@ -14,7 +14,7 @@ describe('file service e2e tests', () => {
     await clearAllFiles(region, bucket);
   });
 
-  test('should create db entry on lambda invoke', async () => {
+  test('should create object in s3 on lambda invoke', async () => {
     const lambda = new AWS.Lambda({ region });
 
     const body = {
