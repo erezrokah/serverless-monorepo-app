@@ -1,52 +1,21 @@
 import AWS = require('aws-sdk');
+import { clearAllFiles } from 'jest-e2e-serverless/lib/utils/s3';
 import fetch from 'node-fetch';
 
-const region = 'us-east-1';
-AWS.config.update({ region });
-
-const Bucket = 'file-service-s3-bucket-dev';
-
-const listAllKeys = async token => {
-  const opts = { Bucket, ContinuationToken: null };
-  if (token) {
-    opts.ContinuationToken = token;
-  }
-  const s3 = new AWS.S3();
-  const data = await s3.listObjectsV2(opts).promise();
-  let allKeys = data.Contents || [];
-  if (data.IsTruncated) {
-    allKeys = allKeys.concat(await listAllKeys(data.NextContinuationToken));
-  }
-  return allKeys;
-};
-
-const clearAllFiles = async () => {
-  const allKeys = await listAllKeys(null);
-  if (allKeys.length > 0) {
-    const s3 = new AWS.S3();
-    await s3
-      .deleteObjects({
-        Bucket,
-        Delete: {
-          Objects: allKeys.map(item => ({ Key: item.Key })),
-          Quiet: false,
-        },
-      })
-      .promise();
-  }
-};
-
 describe('file service e2e tests', () => {
+  const region = 'us-east-1';
+  const bucket = 'file-service-s3-bucket-dev';
+
   beforeEach(async () => {
-    await clearAllFiles();
+    await clearAllFiles(region, bucket);
   });
 
   afterEach(async () => {
-    await clearAllFiles();
+    await clearAllFiles(region, bucket);
   });
 
   test('should create db entry on lambda invoke', async () => {
-    const lambda = new AWS.Lambda();
+    const lambda = new AWS.Lambda({ region });
 
     const body = {
       file_url:
@@ -67,11 +36,6 @@ describe('file service e2e tests', () => {
 
     const expectedBuffer = await (await fetch(body.file_url)).buffer();
 
-    const s3 = new AWS.S3();
-    const actualBuffer = (await s3
-      .getObject({ Bucket, Key: body.key })
-      .promise()).Body;
-
-    expect(actualBuffer).toEqual(expectedBuffer);
+    expect({ region, bucket }).toHaveObject(body.key, expectedBuffer);
   });
 });
