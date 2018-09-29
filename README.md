@@ -1,5 +1,8 @@
 # Serverless Monorepo App
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CircleCI](https://circleci.com/gh/erezrokah/serverless-monorepo-app.svg?style=svg)](https://circleci.com/gh/erezrokah/serverless-monorepo-app)
+
 This application is structured as a monorepo which means all the different packages sits under the same GitHub repository.
 
 It makes it easier to have CI/CD and automate dependency management.
