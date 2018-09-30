@@ -29,7 +29,7 @@
     "lint": "tslint '*.ts'",
     "test": "TZ=GMT CI=true react-scripts-ts test --env=jsdom",
     "test:watch": "TZ=GMT react-scripts-ts test --env=jsdom",
-    "test:ci": "TZ=GMT CI=true JEST_JUNIT_OUTPUT=../reports/junit/${npm_package_name}-test-results.xml yarn test --ci --reporters=jest-junit --reporters=default",
+    "test:ci": "TZ=GMT CI=true JEST_JUNIT_OUTPUT=../reports/junit/${npm_package_name}-test-results.xml yarn test --runInBand --ci --reporters=jest-junit --reporters=default",
     "coverage": "TZ=GMT yarn test --coverage",
     "eject": "react-scripts-ts eject",
     "deploy:dev": "serverless deploy --stage dev",
