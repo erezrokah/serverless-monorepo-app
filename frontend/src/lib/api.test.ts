@@ -69,7 +69,6 @@ describe('api lib', () => {
     const result = await privateApi();
 
     expect(fetch).toHaveBeenCalledTimes(1);
-    expect(localStorage.getItem).toHaveBeenCalledTimes(1);
     expect(fetch).toHaveBeenCalledWith(`${ENDPOINT}/api/private`, {
       headers: {
         Authorization: `Bearer ${token}`,
