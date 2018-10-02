@@ -18,6 +18,10 @@ describe('db service e2e tests', () => {
     });
     const lambdaItem = JSON.parse(result.body);
 
-    expect({ region, table }).toHaveItem({ id: lambdaItem.id }, lambdaItem);
+    expect.assertions(1);
+    await expect({ region, table, timeout: 0 }).toHaveItem(
+      { id: lambdaItem.id },
+      lambdaItem,
+    );
   });
 });

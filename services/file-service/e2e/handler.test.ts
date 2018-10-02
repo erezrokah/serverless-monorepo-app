@@ -30,6 +30,10 @@ describe('file service e2e tests', () => {
 
     const expectedBuffer = await (await fetch(body.file_url)).buffer();
 
-    expect({ region, bucket }).toHaveObject(body.key, expectedBuffer);
+    expect.assertions(2);
+    await expect({ region, bucket, timeout: 0 }).toHaveObject(
+      body.key,
+      expectedBuffer,
+    );
   });
 });
