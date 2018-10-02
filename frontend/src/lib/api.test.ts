@@ -12,12 +12,12 @@ process.env.REACT_APP_DB_SERVICE_ENDPOINT = DB_ENDPOINT;
 
 describe('api lib', () => {
   const fetch = jest.fn();
+  // @ts-ignore fetch does not exists on global
   global.fetch = fetch;
 
   const localStorage = { getItem: jest.fn() };
-  Object.defineProperty(window, 'localStorage', {
-    value: localStorage,
-  });
+  // @ts-ignore localStorage does not exists on global	  Object.defineProperty(window, 'localStorage', {
+  global.localStorage = localStorage;
 
   beforeEach(() => {
     jest.clearAllMocks();
