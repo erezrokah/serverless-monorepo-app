@@ -12,12 +12,12 @@ process.env.REACT_APP_DB_SERVICE_ENDPOINT = DB_ENDPOINT;
 
 describe('api lib', () => {
   const fetch = jest.fn();
-  // @ts-ignore fetch does not exists on global
   global.fetch = fetch;
 
   const localStorage = { getItem: jest.fn() };
-  // @ts-ignore localStorage does not exists on global
-  global.localStorage = localStorage;
+  Object.defineProperty(window, 'localStorage', {
+    value: localStorage,
+  });
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -69,6 +69,7 @@ describe('api lib', () => {
     const result = await privateApi();
 
     expect(fetch).toHaveBeenCalledTimes(1);
+    expect(localStorage.getItem).toHaveBeenCalledTimes(1);
     expect(fetch).toHaveBeenCalledWith(`${ENDPOINT}/api/private`, {
       headers: {
         Authorization: `Bearer ${token}`,

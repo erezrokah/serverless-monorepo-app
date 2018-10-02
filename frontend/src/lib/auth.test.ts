@@ -3,8 +3,9 @@ describe('auth lib', () => {
 
   const [getItem, removeItem, setItem] = [jest.fn(), jest.fn(), jest.fn()];
   const localStorage = { getItem, removeItem, setItem };
-  // @ts-ignore localStorage does not exists on global
-  global.localStorage = localStorage;
+  Object.defineProperty(window, 'localStorage', {
+    value: localStorage,
+  });
 
   beforeEach(() => {
     jest.clearAllMocks();
