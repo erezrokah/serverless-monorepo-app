@@ -1,5 +1,5 @@
 import { invoke } from 'jest-e2e-serverless/lib/utils/lambda';
-import { clearAllFiles } from 'jest-e2e-serverless/lib/utils/s3';
+import { clearAllObjects } from 'jest-e2e-serverless/lib/utils/s3';
 import fetch from 'node-fetch';
 
 describe('file service e2e tests', () => {
@@ -7,11 +7,11 @@ describe('file service e2e tests', () => {
   const bucket = 'file-service-s3-bucket-dev';
 
   beforeEach(async () => {
-    await clearAllFiles(region, bucket);
+    await clearAllObjects(region, bucket);
   });
 
   afterEach(async () => {
-    await clearAllFiles(region, bucket);
+    await clearAllObjects(region, bucket);
   });
 
   test('should create object in s3 on lambda invoke', async () => {
