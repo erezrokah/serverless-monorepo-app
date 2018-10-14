@@ -6025,9 +6025,9 @@ jest-docblock@^23.2.0:
   dependencies:
     detect-newline "^2.1.0"
 
-jest-e2e-serverless@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/jest-e2e-serverless/-/jest-e2e-serverless-0.0.7.tgz#be83a6d930569bb1bd9db2fcdb485e8c381e0c31"
+jest-e2e-serverless@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/jest-e2e-serverless/-/jest-e2e-serverless-0.0.8.tgz#dbf32e9fc3911a31131530f6f6bc9458ac567a86"
   dependencies:
     aws-sdk "^2.323.0"
     jest-diff "^23.6.0"
