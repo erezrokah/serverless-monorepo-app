@@ -25,6 +25,7 @@ provider:
   region: ${self:custom.currentRegion}
 
   memorySize: 256
+  logRetentionInDays: 7
 
   tracing: true # enable tracing
 
