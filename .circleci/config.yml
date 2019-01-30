@@ -88,6 +88,7 @@ aliases:
     run:
       name: Install awscli
       command: |
+        sudo add-apt-repository ppa:deadsnakes/ppa
         sudo apt-get -y -qq update
         sudo apt-get -y -qq install python3.6-dev
         curl -O https://bootstrap.pypa.io/get-pip.py
