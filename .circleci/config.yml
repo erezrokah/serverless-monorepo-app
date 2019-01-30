@@ -89,10 +89,7 @@ aliases:
       name: Install awscli
       command: >
         sudo apt-get update &&
-        sudo apt-get install -y python-pip libpython-dev python-dev &&
-        curl -O https://bootstrap.pypa.io/get-pip.py &&
-        python3 get-pip.py --user &&
-        pip install awscli --upgrade --user
+        sudo apt-get install python3.4-dev
 
 jobs:
   build:
