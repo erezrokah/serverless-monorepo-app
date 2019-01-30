@@ -88,8 +88,9 @@ aliases:
     run:
       name: Install awscli
       command: |
+        sudo apt-get update && sudo apt-get install -y python3
         curl -O https://bootstrap.pypa.io/get-pip.py
-        python3.4 get-pip.py --user
+        python3 get-pip.py --user
         pip install awscli --upgrade --user
 
 jobs:
