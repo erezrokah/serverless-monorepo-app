@@ -16,3 +16,5 @@ coverage
 junit.xml
 
 out.txt
+
+e2e/config.ts
