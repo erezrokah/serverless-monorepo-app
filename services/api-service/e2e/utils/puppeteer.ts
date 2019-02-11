@@ -18,7 +18,7 @@ export const auth0Login = async (
   password: string,
   redirectUri: string,
 ) => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch();
 
   const [page] = await browser.pages();
 
