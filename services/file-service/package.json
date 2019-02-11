@@ -24,8 +24,6 @@
     "@types/jest": "^23.3.2",
     "@types/node": "^10.10.3",
     "@types/node-fetch": "^2.1.2",
-    "dotenv": "^6.0.0",
-    "fs-extra": "^7.0.0",
     "jest": "^23.6.0",
     "jest-e2e-serverless": "^0.0.16",
     "serverless-offline": "^3.25.14",

@@ -1,4 +1,4 @@
-import AWS = require('aws-sdk');
+import { S3 } from 'aws-sdk';
 import fetch from 'node-fetch';
 
 const Bucket = process.env.BUCKET || '';
@@ -11,7 +11,7 @@ const headers = {
 };
 
 export const saveFile = async (body: string | null) => {
-  const s3 = new AWS.S3();
+  const s3 = new S3();
 
   let fileUrl = '';
   let key = '';

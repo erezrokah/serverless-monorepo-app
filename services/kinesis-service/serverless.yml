@@ -1,0 +1,62 @@
+service: kinesis-service
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-stack-output
+  - serverless-plugin-tracing
+
+custom:
+  defaultStage: dev
+  currentStage: ${opt:stage, self:custom.defaultStage}
+  currentRegion: ${file(../common/environment/config.${self:custom.currentStage}.json):region}
+  kinesisStream: kinesis-service-stream-${self:custom.currentStage}
+
+  output:
+    handler: ../../scripts/stackOutput.handler
+
+  webpack:
+    includeModules: true
+    packager: yarn
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.currentStage}
+  region: ${self:custom.currentRegion}
+
+  memorySize: 256
+  logRetentionInDays: 7
+
+  tracing: true # enable tracing
+  iamRoleStatements:
+    - Effect: 'Allow' # xray permissions (required)
+      Action:
+        - 'xray:PutTraceSegments'
+        - 'xray:PutTelemetryRecords'
+      Resource:
+        - '*'
+
+    - Effect: Allow
+      Action:
+        - kinesis:PutRecord
+      Resource: 'arn:aws:kinesis:${opt:region, self:provider.region}:*:stream/${self:custom.kinesisStream}'
+
+functions:
+  queue:
+    handler: src/handler.queue
+    events:
+      - http:
+          path: queue
+          method: post
+          cors: true
+    environment:
+      Stream: ${self:custom.kinesisStream}
+
+resources:
+  Resources:
+    KinesisStream:
+      Type: AWS::Kinesis::Stream
+      Properties:
+        Name: ${self:custom.kinesisStream}
+        ShardCount: 1
