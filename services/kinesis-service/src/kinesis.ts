@@ -49,8 +49,8 @@ export const queueEvent = async (body: string | null) => {
     await kinesis.putRecord(params).promise();
     const response = {
       body: JSON.stringify({
+        data: { message: 'Record saved', id: record.id },
         input: body,
-        message: 'Record saved',
       }),
       headers,
       statusCode: 200,

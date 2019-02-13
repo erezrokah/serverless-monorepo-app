@@ -103,8 +103,8 @@ describe('kinesis', () => {
 
     expect(response).toEqual({
       body: JSON.stringify({
+        data: { message: 'Record saved', id: uuid() },
         input: body,
-        message: 'Record saved',
       }),
       headers,
       statusCode: 200,
