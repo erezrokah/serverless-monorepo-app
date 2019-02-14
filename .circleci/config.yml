@@ -36,6 +36,7 @@ aliases:
         - services/api-service/node_modules
         - services/db-service/node_modules
         - services/file-service/node_modules
+        - services/kinesis-service/node_modules
       key: dependencies-cache-{{ checksum "yarn.lock" }}
 
   - &restore_cache
