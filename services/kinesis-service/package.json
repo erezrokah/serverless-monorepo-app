@@ -1,7 +1,7 @@
 {
-  "name": "file-service",
+  "name": "kinesis-service",
   "version": "0.0.1",
-  "description": "File Service",
+  "description": "Kinesis Service",
   "scripts": {
     "lint": "tslint 'src/**/*.ts'",
     "test": "jest",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.320.0",
-    "node-fetch": "^2.2.0"
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.13",
@@ -26,6 +26,7 @@
     "@types/node-fetch": "^2.1.2",
     "jest": "^23.6.0",
     "jest-e2e-serverless": "^0.0.18",
+    "mockdate": "^2.0.2",
     "serverless-offline": "^3.25.14",
     "serverless-plugin-tracing": "^2.0.0",
     "serverless-stack-output": "^0.2.3",

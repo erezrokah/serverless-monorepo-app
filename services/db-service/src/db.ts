@@ -1,5 +1,5 @@
-import AWS = require('aws-sdk');
-import uuid = require('uuid/v1');
+import { DynamoDB } from 'aws-sdk';
+import { v1 as uuid } from 'uuid';
 
 const TableName = process.env.DYNAMODB_TABLE || '';
 
@@ -11,7 +11,7 @@ const headers = {
 };
 
 export const create = async (body: string | null) => {
-  const dynamoDb = new AWS.DynamoDB.DocumentClient();
+  const dynamoDb = new DynamoDB.DocumentClient();
 
   let text = '';
   if (body) {

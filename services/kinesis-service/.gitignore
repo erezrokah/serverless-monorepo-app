@@ -1,0 +1,18 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# Webpack directories
+.webpack
+
+config.*.json
+!config.example.json
+
+coverage
+
+junit.xml
+
+out.txt

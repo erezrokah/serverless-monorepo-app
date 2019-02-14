@@ -6071,10 +6071,10 @@ jest-docblock@^23.2.0:
   dependencies:
     detect-newline "^2.1.0"
 
-jest-e2e-serverless@^0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/jest-e2e-serverless/-/jest-e2e-serverless-0.0.16.tgz#dfa34c97f19ceb4c19041baea8a53c697c823b62"
-  integrity sha512-YXJiJBRe/Xtkq7ahJFcDTekAzldS9F5WGiZUc8v5e0LSeVPRAGhUhqku3m1mP24QBWSolnsF9kzNmXQC3iKdeA==
+jest-e2e-serverless@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/jest-e2e-serverless/-/jest-e2e-serverless-0.0.18.tgz#bd45d866b7814cdbe05a81f89e6e69137f00cfc2"
+  integrity sha512-izq8hw3d3BJoL/obusgsiXt42FI2+WGGTJKjdJO+mQQBmfBEdgmuPfiyXvLh6N+p15KBtsKh4pUTPr8Q+8Zy+g==
   dependencies:
     aws-sdk "^2.323.0"
     axios "^0.18.0"
@@ -7368,6 +7368,7 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
 mockdate@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/mockdate/-/mockdate-2.0.2.tgz#5ae0c0eaf8fe23e009cd01f9889b42c4f634af12"
+  integrity sha1-WuDA6vj+I+AJzQH5iJtCxPY0rxI=
 
 modify-values@^1.0.0:
   version "1.0.1"
@@ -10997,6 +10998,7 @@ uuid@^3.0.1, uuid@^3.1.0:
 uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
 
 v8flags@^3.0.0:
   version "3.1.1"
