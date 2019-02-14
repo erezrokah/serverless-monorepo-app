@@ -32,6 +32,7 @@ aliases:
         - node_modules
         - frontend/node_modules
         - services/common/node_modules
+        - services/api-service/node_modules
         - services/email-service/node_modules
         - services/api-service/node_modules
         - services/db-service/node_modules
