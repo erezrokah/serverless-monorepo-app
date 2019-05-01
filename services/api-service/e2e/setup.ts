@@ -1,4 +1,4 @@
-import { deploy } from 'jest-e2e-serverless/lib/utils/serverless';
+import { deploy } from 'aws-testing-library/lib/utils/serverless';
 
 const deployDev = async () => {
   await deploy('dev');

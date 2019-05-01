@@ -1,1 +1,1 @@
-import 'jest-e2e-serverless';
+import 'aws-testing-library/lib/jest';
