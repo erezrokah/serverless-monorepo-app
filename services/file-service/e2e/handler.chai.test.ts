@@ -1,6 +1,12 @@
+import awsTesting from 'aws-testing-library/lib/chai';
 import { invoke } from 'aws-testing-library/lib/utils/lambda';
 import { clearAllObjects } from 'aws-testing-library/lib/utils/s3';
+import chai = require('chai');
 import fetch from 'node-fetch';
+
+chai.use(awsTesting);
+
+const { expect } = chai;
 
 describe('file service e2e tests', () => {
   const region = 'us-east-1';
@@ -26,12 +32,11 @@ describe('file service e2e tests', () => {
     });
 
     const parsedResult = JSON.parse(result.body);
-    expect(parsedResult.message).toEqual('File saved');
+    expect(parsedResult.message).to.be.equal('File saved');
 
     const expectedBuffer = await (await fetch(body.file_url)).buffer();
 
-    expect.assertions(2);
-    await expect({ region, bucket, timeout: 0 }).toHaveObject(
+    await expect({ region, bucket, timeout: 0 }).to.have.object(
       body.key,
       expectedBuffer,
     );

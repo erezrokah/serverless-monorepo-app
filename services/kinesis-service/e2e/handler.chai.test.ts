@@ -1,4 +1,10 @@
+import awsTesting from 'aws-testing-library/lib/chai';
 import { invoke } from 'aws-testing-library/lib/utils/lambda';
+import chai = require('chai');
+
+chai.use(awsTesting);
+
+const { expect } = chai;
 
 describe('kinesis service e2e tests', () => {
   const region = 'us-east-1';
@@ -15,9 +21,8 @@ describe('kinesis service e2e tests', () => {
 
     const { data } = JSON.parse(result.body);
 
-    expect.assertions(2);
-    expect(data.message).toEqual('Record saved');
-    await expect({ region, stream }).toHaveRecord(({ record }) => {
+    expect(data.message).to.be.equal('Record saved');
+    await expect({ region, stream }).to.have.record(({ record }) => {
       return record.id === data.id && record.message === body.record.message;
     });
   });

@@ -1,5 +1,11 @@
+import awsTesting from 'aws-testing-library/lib/chai';
 import { clearAllItems } from 'aws-testing-library/lib/utils/dynamoDb';
 import { invoke } from 'aws-testing-library/lib/utils/lambda';
+import chai = require('chai');
+
+chai.use(awsTesting);
+
+const { expect } = chai;
 
 describe('db service e2e tests', () => {
   const region = 'us-east-1';
@@ -18,8 +24,7 @@ describe('db service e2e tests', () => {
     });
     const lambdaItem = JSON.parse(result.body);
 
-    expect.assertions(1);
-    await expect({ region, table, timeout: 0 }).toHaveItem(
+    await expect({ region, table, timeout: 0 }).to.have.item(
       { id: lambdaItem.id },
       lambdaItem,
     );
