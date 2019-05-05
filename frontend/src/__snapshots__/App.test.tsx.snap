@@ -21,7 +21,6 @@ exports[`App renders correctly initialized=true 1`] = `
     >
       <a
         className="active item"
-        data-value={undefined}
         href="/public"
         onClick={[Function]}
         role="listitem"
@@ -30,7 +29,6 @@ exports[`App renders correctly initialized=true 1`] = `
       </a>
       <a
         className="item"
-        data-value={undefined}
         href="/private"
         onClick={[Function]}
         role="listitem"

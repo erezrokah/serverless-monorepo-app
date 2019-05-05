@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Button, Form, Message } from 'semantic-ui-react';
+import { Button, Form, Message, InputOnChangeData } from 'semantic-ui-react';
 import { fileApiRequested } from '../../actions/api';
 import { fileApiSelector } from '../../selectors/api';
 import { IApiState, IState as Store } from '../../types/redux';
@@ -66,9 +66,12 @@ export class FileApi extends React.Component<IProps, IState> {
   }
 
   private handleChange = (
-    _: React.SyntheticEvent<any>,
-    { name, value }: IEventProps,
-  ) => this.setState({ [name]: value });
+    _: React.SyntheticEvent<HTMLInputElement, Event>,
+    data: InputOnChangeData,
+  ) => {
+    const { name, value } = data as IEventProps;
+    this.setState({ [name]: value });
+  };
 
   private onFileSave = () =>
     this.props.fileApiRequested(this.state.fileUrl, this.state.fileName);

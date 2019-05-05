@@ -2,7 +2,6 @@
 
 exports[`Email Api Component should render correctly 1`] = `
 <form
-  action={undefined}
   className="ui success form"
   onSubmit={[Function]}
 >
@@ -14,16 +13,13 @@ exports[`Email Api Component should render correctly 1`] = `
     >
       <div
         className="ui input"
-        content={undefined}
       >
         <input
-          disabled={undefined}
           id="emailApi"
           name="email"
           onChange={[Function]}
           placeholder="Destination Email"
           required={true}
-          tabIndex={undefined}
           type="email"
           value=""
         />
@@ -31,10 +27,8 @@ exports[`Email Api Component should render correctly 1`] = `
     </div>
     <button
       className="ui button"
-      disabled={undefined}
       onClick={[Function]}
       role="button"
-      tabIndex={undefined}
     >
       Send Email
     </button>
@@ -73,7 +67,6 @@ exports[`Email Api Component should render correctly 1`] = `
 
 exports[`Email Api Component should render correctly with error 1`] = `
 <form
-  action={undefined}
   className="ui error success form"
   onSubmit={[Function]}
 >
@@ -85,16 +78,13 @@ exports[`Email Api Component should render correctly with error 1`] = `
     >
       <div
         className="ui input"
-        content={undefined}
       >
         <input
-          disabled={undefined}
           id="emailApi"
           name="email"
           onChange={[Function]}
           placeholder="Destination Email"
           required={true}
-          tabIndex={undefined}
           type="email"
           value=""
         />
@@ -102,10 +92,8 @@ exports[`Email Api Component should render correctly with error 1`] = `
     </div>
     <button
       className="ui button"
-      disabled={undefined}
       onClick={[Function]}
       role="button"
-      tabIndex={undefined}
     >
       Send Email
     </button>

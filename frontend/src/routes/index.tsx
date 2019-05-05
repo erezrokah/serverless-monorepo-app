@@ -1,6 +1,6 @@
 import { push } from 'connected-react-router';
 import * as React from 'react';
-import * as Loadable from 'react-loadable';
+import Loadable from 'react-loadable';
 import { Route } from 'react-router';
 import locationHelperBuilder from 'redux-auth-wrapper/history4/locationHelper';
 import { connectedReduxRedirect } from 'redux-auth-wrapper/history4/redirect';

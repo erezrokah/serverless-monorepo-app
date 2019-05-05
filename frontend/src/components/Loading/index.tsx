@@ -2,7 +2,7 @@ import * as React from 'react';
 import { LoadingComponentProps } from 'react-loadable';
 import { Button, Dimmer, Loader, Segment } from 'semantic-ui-react';
 
-const Loading = () => (
+export const Loading = () => (
   <Dimmer active={true} inverted={true}>
     <Loader inverted={true}>Loading</Loader>
   </Dimmer>

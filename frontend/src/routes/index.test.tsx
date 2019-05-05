@@ -7,53 +7,21 @@ import Loading, { ComponentLoading } from '../components/Loading';
 import { isAuthenticated, isNotAuthenticated } from '../selectors/auth';
 import { paths, routes, userIsAuthenticated, userIsNotAuthenticated } from './';
 
-jest.mock('../components/Callback', () => {
-  return {
-    default: jest.fn(),
-  };
-});
-
-jest.mock('../components/Home', () => {
-  return {
-    default: jest.fn(),
-  };
-});
-
-jest.mock('../components/Login', () => {
-  return {
-    default: jest.fn(),
-  };
-});
-
-jest.mock('../components/NotFound', () => {
-  return {
-    default: jest.fn(),
-  };
-});
-
-jest.mock('../components/Private', () => {
-  return {
-    default: jest.fn(),
-  };
-});
-
-jest.mock('../components/Public', () => {
-  return {
-    default: jest.fn(),
-  };
-});
-
+jest.mock('../components/Callback', () => 'Callback');
+jest.mock('../components/Home', () => 'Home');
+jest.mock('../components/Login', () => 'Login');
+jest.mock('../components/NotFound', () => 'NotFound');
+jest.mock('../components/Private', () => 'Private');
+jest.mock('../components/Public', () => 'Public');
 jest.mock('redux-auth-wrapper/history4/redirect', () => {
   const returnValue = jest.fn();
   const connectedReduxRedirectMock = jest.fn(() => returnValue);
   return { connectedReduxRedirect: connectedReduxRedirectMock };
 });
-
 jest.mock('redux-auth-wrapper/history4/locationHelper', () => {
   const locationHelper = { getRedirectQueryParam: jest.fn() };
-  return { default: jest.fn(() => locationHelper) };
+  return jest.fn(() => locationHelper);
 });
-
 jest.mock('react-loadable', () => jest.fn());
 
 describe('routes', () => {
@@ -97,12 +65,12 @@ describe('routes', () => {
       privateComponent,
       publicComponent,
     ]).toEqual([
-      require('../components/Callback'),
-      require('../components/Home'),
-      require('../components/Login'),
-      require('../components/NotFound'),
-      require('../components/Private'),
-      require('../components/Public'),
+      await import('../components/Callback'),
+      await import('../components/Home'),
+      await import('../components/Login'),
+      await import('../components/NotFound'),
+      await import('../components/Private'),
+      await import('../components/Public'),
     ]);
 
     expect(connectedReduxRedirect).toHaveBeenCalledTimes(2);

@@ -12,6 +12,7 @@ jest.mock('../Loading', () => {
   return {
     ComponentLoading: 'component-loading-component',
     default: 'loading-component',
+    __esModule: true,
   };
 });
 
