@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Route } from 'react-router';
 import 'react-test-renderer';
 import locationHelperBuilder from 'redux-auth-wrapper/history4/locationHelper';
-import { connectedReduxRedirect } from 'redux-auth-wrapper/history4/redirect';
 import Loading, { ComponentLoading } from '../components/Loading';
 import { isAuthenticated, isNotAuthenticated } from '../selectors/auth';
 import { paths, routes, userIsAuthenticated, userIsNotAuthenticated } from './';
@@ -69,6 +68,10 @@ describe('routes', () => {
   });
 
   test('should return valid routes', async () => {
+    const {
+      connectedReduxRedirect,
+    } = require('redux-auth-wrapper/history4/redirect');
+
     const Loadable = require('react-loadable');
 
     expect(Loadable).toHaveBeenCalledTimes(6);

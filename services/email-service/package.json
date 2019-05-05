@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^6.3.1",
-    "aws-xray-sdk": "^2.0.0",
-    "source-map-support": "^0.5.6"
+    "aws-xray-sdk": "^2.3.3",
+    "source-map-support": "^0.5.12"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.13",
@@ -27,9 +27,8 @@
     "dotenv": "^6.0.0",
     "fs-extra": "^7.0.0",
     "jest": "^23.6.0",
-    "serverless-offline": "^3.25.14",
     "serverless-plugin-tracing": "^2.0.0",
-    "serverless-stack-output": "^0.2.3",
+    "@anttiviljami/serverless-stack-output": "^0.3.1",
     "serverless-webpack": "^5.2.0",
     "ts-jest": "22.4.6",
     "ts-loader": "^5.1.1",
