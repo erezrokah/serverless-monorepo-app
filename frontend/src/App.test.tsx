@@ -10,22 +10,15 @@ import ConnectedApp, { App } from './App';
 const middlewares: any[] = [];
 const mockStore = configureStore(middlewares);
 
-jest.mock('./components/Api', () => {
-  return {
-    default: 'api-component',
-  };
-});
+jest.mock('./components/Api', () => 'api-component');
 
-jest.mock('./components/AuthStatus', () => {
-  return {
-    default: 'auth-status-component',
-  };
-});
+jest.mock('./components/AuthStatus', () => 'auth-status-component');
 
 jest.mock('./components/Loading', () => {
   return {
     ComponentLoading: 'component-loading-component',
     default: 'loading-component',
+    __esModule: true,
   };
 });
 

@@ -4,7 +4,7 @@ frameworkVersion: '>=1.2.0 <2.0.0'
 
 plugins:
   - serverless-single-page-app-plugin
-  - serverless-stack-output
+  - '@anttiviljami/serverless-stack-output'
   - serverless-plugin-tracing
 
 custom:

@@ -12,14 +12,11 @@ process.env.REACT_APP_DB_SERVICE_ENDPOINT = DB_ENDPOINT;
 
 describe('api lib', () => {
   const fetch = jest.fn();
-  // @ts-ignore fetch does not exists on global
+  // @ts-ignore
   global.fetch = fetch;
 
-  const localStorage = { getItem: jest.fn() };
-  // @ts-ignore localStorage does not exists on global	  Object.defineProperty(window, 'localStorage', {
-  global.localStorage = localStorage;
-
   beforeEach(() => {
+    localStorage.clear();
     jest.clearAllMocks();
     jest.resetAllMocks();
   });
@@ -59,7 +56,8 @@ describe('api lib', () => {
     const { privateApi } = require('./api');
 
     const token = 'someIdToken';
-    localStorage.getItem.mockReturnValueOnce(token);
+    localStorage.setItem('id_token', token);
+
     const data = { message: 'message' };
     const json = jest.fn();
     json.mockReturnValueOnce(Promise.resolve(data));
@@ -82,7 +80,8 @@ describe('api lib', () => {
     const { privateApi } = require('./api');
 
     const token = 'someIdToken';
-    localStorage.getItem.mockReturnValueOnce(token);
+    localStorage.setItem('id_token', token);
+
     const data = { message: 'message' };
     const json = jest.fn();
     json.mockReturnValueOnce(Promise.resolve(data));
@@ -115,7 +114,8 @@ describe('api lib', () => {
     const { emailApi } = require('./api');
 
     const token = 'someIdToken';
-    localStorage.getItem.mockReturnValueOnce(token);
+    localStorage.setItem('id_token', token);
+
     const data = { message: 'message' };
     const json = jest.fn();
     json.mockReturnValueOnce(Promise.resolve(data));
@@ -140,7 +140,8 @@ describe('api lib', () => {
     const { emailApi } = require('./api');
 
     const token = 'someIdToken';
-    localStorage.getItem.mockReturnValueOnce(token);
+    localStorage.setItem('id_token', token);
+
     const data = { message: 'message' };
     const json = jest.fn();
     json.mockReturnValueOnce(Promise.resolve(data));

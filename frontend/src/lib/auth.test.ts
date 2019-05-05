@@ -1,12 +1,12 @@
 describe('auth lib', () => {
   const Mockdate = require('mockdate');
 
-  const [getItem, removeItem, setItem] = [jest.fn(), jest.fn(), jest.fn()];
-  const localStorage = { getItem, removeItem, setItem };
-  // @ts-ignore localStorage does not exists on global	  Object.defineProperty(window, 'localStorage', {
-  global.localStorage = localStorage;
+  const getItem = jest.spyOn(Storage.prototype, 'getItem');
+  const setItem = jest.spyOn(Storage.prototype, 'setItem');
+  const removeItem = jest.spyOn(Storage.prototype, 'removeItem');
 
   beforeEach(() => {
+    localStorage.clear();
     jest.clearAllMocks();
     jest.resetModules();
     Mockdate.reset();
@@ -65,10 +65,10 @@ describe('auth lib', () => {
     expect(removeItem).toHaveBeenCalledWith('expires_at');
   });
 
-  test('should return false on isAuthenticated when expires_at=null', () => {
+  test('should return false on isAuthenticated when expires_at=""', () => {
     Mockdate.set('1/1/2000');
 
-    getItem.mockReturnValueOnce(null);
+    localStorage.setItem('expires_at', '');
 
     const { isAuthenticated } = require('./auth');
 
@@ -85,7 +85,7 @@ describe('auth lib', () => {
 
     Mockdate.set(currentDate);
 
-    getItem.mockReturnValueOnce(JSON.stringify(expiresAt));
+    localStorage.setItem('expires_at', JSON.stringify(expiresAt));
 
     const { isAuthenticated } = require('./auth');
 
@@ -100,7 +100,7 @@ describe('auth lib', () => {
 
     Mockdate.set(currentDate);
 
-    getItem.mockReturnValueOnce(JSON.stringify(expiresAt));
+    localStorage.setItem('expires_at', JSON.stringify(expiresAt));
 
     const { isAuthenticated } = require('./auth');
 

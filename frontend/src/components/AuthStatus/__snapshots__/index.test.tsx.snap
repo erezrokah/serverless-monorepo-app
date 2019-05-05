@@ -14,10 +14,8 @@ exports[`AuthStatus Component should render correctly authenticated=true 1`] = `
 >
   <button
     className="ui button"
-    disabled={undefined}
     onClick={[Function]}
     role="button"
-    tabIndex={undefined}
   >
     Sign out
   </button>

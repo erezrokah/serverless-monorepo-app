@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers, Reducer, Action } from 'redux';
 import { handleActions } from 'redux-actions';
 import { filterActions } from 'redux-ignore';
 import * as actions from '../actions/api';
@@ -46,13 +46,14 @@ const apiSubReducer = handleActions<IApiState, any, any>(
     },
   },
   initialState,
-);
+) as Reducer<IApiState | undefined>;
 
-export let subReducers = {};
+export let subReducers: {
+  [metaType: string]: Reducer<IApiState | undefined>;
+} = {};
 Object.keys(actions.apiMetaTypes).forEach(metaType => {
-  subReducers[metaType] = filterActions(
-    apiSubReducer,
-    (action: IActionWithMeta) => predicate(action, metaType),
+  subReducers[metaType] = filterActions(apiSubReducer, (action: Action) =>
+    predicate(action as IActionWithMeta, metaType),
   );
 });
 

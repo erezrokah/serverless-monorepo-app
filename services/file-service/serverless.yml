@@ -2,8 +2,7 @@ service: file-service
 
 plugins:
   - serverless-webpack
-  - serverless-offline
-  - serverless-stack-output
+  - '@anttiviljami/serverless-stack-output'
   - serverless-plugin-tracing
 
 custom:

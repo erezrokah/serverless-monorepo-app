@@ -12,18 +12,19 @@
     "prettier:ci": "prettier --list-different src/**/*.ts"
   },
   "dependencies": {
-    "jsonwebtoken": "^8.3.0"
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.13",
-    "@types/jest": "^23.3.2",
-    "@types/jsonwebtoken": "^7.2.8",
+    "@types/jest": "^24.0.12",
+    "@types/jsonwebtoken": "^8.3.2",
     "@types/node": "^10.10.3",
-    "jest": "^23.6.0",
+    "jest": "24.7.1",
     "ts-jest": "22.4.6",
     "ts-loader": "^5.1.1",
-    "tslint-config-prettier": "^1.15.0",
-    "typescript": "^3.0.3"
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.5"
   },
   "author": "Erez Rokah",
   "license": "MIT"

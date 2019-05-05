@@ -21,11 +21,12 @@ const setSession = (authResult: Auth0DecodedHash) => {
 const handleAuthentication = async () => {
   const promise: Promise<Auth0DecodedHash> = new Promise((resolve, reject) => {
     auth.parseHash((err, authResult) => {
+      const result = authResult || {};
       if (err) {
         reject(err);
       } else {
-        setSession(authResult);
-        resolve(authResult);
+        setSession(result);
+        resolve(result);
       }
     });
   });

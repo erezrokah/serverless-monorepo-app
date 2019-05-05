@@ -1,13 +1,9 @@
 import { all } from 'redux-saga/effects';
 import root from './index';
 
-jest.mock('./api', () => ({
-  default: ['api'],
-}));
+jest.mock('./api', () => ['api']);
 
-jest.mock('./auth', () => ({
-  default: ['auth'],
-}));
+jest.mock('./auth', () => ['auth']);
 
 describe('Sagas Index', () => {
   test('should export all sagas', () => {

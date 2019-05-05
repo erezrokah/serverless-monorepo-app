@@ -2,7 +2,6 @@
 
 exports[`Db Api Component should render correctly 1`] = `
 <form
-  action={undefined}
   className="ui success form"
   onSubmit={[Function]}
 >
@@ -14,16 +13,13 @@ exports[`Db Api Component should render correctly 1`] = `
     >
       <div
         className="ui input"
-        content={undefined}
       >
         <input
-          disabled={undefined}
           id="dbApi"
           name="text"
           onChange={[Function]}
           placeholder="Todos item text"
           required={true}
-          tabIndex={undefined}
           type="text"
           value=""
         />
@@ -31,10 +27,8 @@ exports[`Db Api Component should render correctly 1`] = `
     </div>
     <button
       className="ui button"
-      disabled={undefined}
       onClick={[Function]}
       role="button"
-      tabIndex={undefined}
     >
       Save Todos Item
     </button>
@@ -73,7 +67,6 @@ exports[`Db Api Component should render correctly 1`] = `
 
 exports[`Db Api Component should render correctly with error 1`] = `
 <form
-  action={undefined}
   className="ui error success form"
   onSubmit={[Function]}
 >
@@ -85,16 +78,13 @@ exports[`Db Api Component should render correctly with error 1`] = `
     >
       <div
         className="ui input"
-        content={undefined}
       >
         <input
-          disabled={undefined}
           id="dbApi"
           name="text"
           onChange={[Function]}
           placeholder="Todos item text"
           required={true}
-          tabIndex={undefined}
           type="text"
           value=""
         />
@@ -102,10 +92,8 @@ exports[`Db Api Component should render correctly with error 1`] = `
     </div>
     <button
       className="ui button"
-      disabled={undefined}
       onClick={[Function]}
       role="button"
-      tabIndex={undefined}
     >
       Save Todos Item
     </button>

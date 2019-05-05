@@ -4,10 +4,8 @@ exports[`Private Api Component should render correctly 1`] = `
 Array [
   <button
     className="ui button"
-    disabled={undefined}
     onClick={[Function]}
     role="button"
-    tabIndex={undefined}
   >
     Private Api
   </button>,
@@ -34,10 +32,8 @@ exports[`Private Api Component should render correctly with error 1`] = `
 Array [
   <button
     className="ui button"
-    disabled={undefined}
     onClick={[Function]}
     role="button"
-    tabIndex={undefined}
   >
     Private Api
   </button>,

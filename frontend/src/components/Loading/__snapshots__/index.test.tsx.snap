@@ -9,10 +9,8 @@ exports[`Loading Components ComponentLoading should render correctly with error 
   Error! 
   <button
     className="ui button"
-    disabled={undefined}
     onClick={[Function]}
     role="button"
-    tabIndex={undefined}
   >
     Retry
   </button>
@@ -34,10 +32,8 @@ exports[`Loading Components ComponentLoading should render correctly with timedO
   Taking a long time... 
   <button
     className="ui button"
-    disabled={undefined}
     onClick={[Function]}
     role="button"
-    tabIndex={undefined}
   >
     Retry
   </button>
