@@ -64,6 +64,9 @@
     "redux-mock-store": "^1.5.3",
     "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin",
     "source-map-explorer": "^1.6.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
     "typescript": "^3.4.5"
   },
   "jest": {
