@@ -19,6 +19,10 @@ class ServerlessPlugin {
         usage: 'Invalidates CloudFront cache',
         lifecycleEvents: ['invalidateCache'],
       },
+      publishSite: {
+        usage: 'Runs syncToS3 and invalidateCloudFrontCache',
+        lifecycleEvents: ['publishSite'],
+      },
     };
 
     this.hooks = {
@@ -27,6 +31,7 @@ class ServerlessPlugin {
       'invalidateCloudFrontCache:invalidateCache': this.invalidateCache.bind(
         this,
       ),
+      'publishSite:publishSite': this.publishSite.bind(this),
     };
   }
 
@@ -127,6 +132,11 @@ class ServerlessPlugin {
       this.serverless.cli.log(message);
       throw error;
     }
+  }
+
+  async publishSite() {
+    this.syncDirectory();
+    await this.invalidateCache();
   }
 }
 
