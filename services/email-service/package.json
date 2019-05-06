@@ -9,9 +9,8 @@
     "test:watch": "jest --watch",
     "test:ci": "JEST_JUNIT_OUTPUT=../../reports/junit/${npm_package_name}-service-test-results.xml jest --runInBand --ci",
     "coverage": "jest --coverage",
-    "deploy:dev": "serverless deploy --stage dev",
-    "deploy:qa": "serverless deploy --stage qa",
-    "deploy:prod": "serverless deploy --stage prod",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove",
     "prettier": "prettier --write src/**/*.ts",
     "prettier:ci": "prettier --list-different src/**/*.ts"
   },

@@ -6,6 +6,7 @@ plugins:
   - serverless-single-page-app-plugin
   - '@anttiviljami/serverless-stack-output'
   - serverless-plugin-tracing
+  - serverless-s3-remover
 
 custom:
   defaultStage: dev
@@ -16,6 +17,10 @@ custom:
     handler: ../scripts/stackOutput.handler
 
   s3Bucket: frontend-app-bucket-${self:custom.currentStage}
+
+  remover:
+    buckets:
+      - ${self:custom.s3Bucket}
 
 provider:
   name: aws
