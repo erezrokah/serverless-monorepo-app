@@ -28,8 +28,8 @@
   },
   "devDependencies": {
     "jest-junit": "^6.2.1",
-    "lerna": "^3.11.1",
-    "prettier": "^1.16.4"
+    "lerna": "^3.14.1",
+    "prettier": "^1.17.1"
   },
   "author": "Erez Rokah",
   "license": "MIT",

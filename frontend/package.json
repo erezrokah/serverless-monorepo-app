@@ -10,7 +10,7 @@
     "react-loadable": "^5.5.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^3.0.0",
+    "react-scripts": "^3.0.1",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
     "redux-auth-wrapper": "^2.0.3",
@@ -62,7 +62,7 @@
     "serverless-s3-remover": "^0.6.0",
     "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin",
     "source-map-explorer": "^1.6.0",
-    "tslint": "^5.16.0",
+    "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "^3.4.5"

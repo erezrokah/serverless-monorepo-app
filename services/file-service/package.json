@@ -32,7 +32,7 @@
     "serverless-webpack": "^5.2.0",
     "ts-jest": "22.4.6",
     "ts-loader": "^5.1.1",
-    "tslint": "^5.16.0",
+    "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.5",
     "webpack": "^4.19.1",
