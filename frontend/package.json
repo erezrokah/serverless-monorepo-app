@@ -42,7 +42,7 @@
     "@anttiviljami/serverless-stack-output": "^0.3.1",
     "@types/auth0-js": "^9.0.0",
     "@types/enzyme": "^3.9.1",
-    "@types/jest": "^24.0.12",
+    "@types/jest": "^25.0.0",
     "@types/node": "^12.0.0",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4",
