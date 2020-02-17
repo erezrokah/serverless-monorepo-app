@@ -16,7 +16,7 @@
     "redux-auth-wrapper": "^2.0.3",
     "redux-ignore": "^1.2.5",
     "redux-logger": "^3.0.6",
-    "redux-saga": "^0.16.0",
+    "redux-saga": "^1.0.0",
     "reselect": "^3.0.1",
     "semantic-ui-css": "^2.4.0",
     "semantic-ui-react": "^0.88.0",
