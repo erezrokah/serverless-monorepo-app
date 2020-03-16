@@ -22,7 +22,7 @@
     "jest": "25.1.0",
     "ts-jest": "25.2.1",
     "ts-loader": "^6.0.0",
-    "tslint": "^5.17.0",
+    "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.5"
   },
