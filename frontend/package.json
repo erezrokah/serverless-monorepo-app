@@ -62,7 +62,7 @@
     "serverless-s3-remover": "^0.6.0",
     "serverless-single-page-app-plugin": "file:./serverless-single-page-app-plugin",
     "source-map-explorer": "^2.0.0",
-    "tslint": "^5.17.0",
+    "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "^3.4.5"
