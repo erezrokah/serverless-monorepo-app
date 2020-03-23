@@ -29,7 +29,7 @@
   "devDependencies": {
     "jest-junit": "^10.0.0",
     "lerna": "^3.14.1",
-    "prettier": "^1.17.1"
+    "prettier": "^2.0.0"
   },
   "author": "Erez Rokah",
   "license": "MIT",
