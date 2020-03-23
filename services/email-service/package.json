@@ -24,7 +24,7 @@
     "@types/jest": "^25.0.0",
     "@types/node": "^10.10.3",
     "dotenv": "^8.0.0",
-    "fs-extra": "^8.0.0",
+    "fs-extra": "^9.0.0",
     "jest": "25.1.0",
     "serverless-plugin-tracing": "^2.0.0",
     "@anttiviljami/serverless-stack-output": "^0.3.1",
