@@ -21,7 +21,7 @@
     "@types/node": "^10.10.3",
     "jest": "25.4.0",
     "ts-jest": "25.4.0",
-    "ts-loader": "^6.0.0",
+    "ts-loader": "^7.0.0",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.5"
