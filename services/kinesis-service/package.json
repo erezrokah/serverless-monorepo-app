@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.449.0",
-    "uuid": "^7.0.0"
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
     "@anttiviljami/serverless-stack-output": "^0.3.1",
