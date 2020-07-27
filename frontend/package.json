@@ -19,7 +19,7 @@
     "redux-saga": "^1.0.0",
     "reselect": "^4.0.0",
     "semantic-ui-css": "^2.4.0",
-    "semantic-ui-react": "^0.88.0",
+    "semantic-ui-react": "^1.0.0",
     "styled-components": "^5.0.0"
   },
   "scripts": {
