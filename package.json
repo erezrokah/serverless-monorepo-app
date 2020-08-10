@@ -35,6 +35,6 @@
   "license": "MIT",
   "name": "serverless-monorepo-app",
   "resolutions": {
-    "@types/react": "16.9.44"
+    "@types/react": "16.9.45"
   }
 }
