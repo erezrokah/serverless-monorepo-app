@@ -2691,7 +2691,7 @@
   resolved "https://registry.yarnpkg.com/@types/auth0-js/-/auth0-js-9.13.4.tgz#d9dab97b7d6b9cf27be5ebb844c6107adcc86257"
   integrity sha512-cNF8SB9lrNkjsq1Y3SZxcQt4pLW3HEqvLjJT7+26oPTngbExxRWONSXre1N+xJzcVHhrtn8A3uF0Ca+CoZ9qSw==
 
-"@types/aws-lambda@^8.10.13":
+"@types/aws-lambda@^8.10.61":
   version "8.10.61"
   resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.61.tgz#7471e08843dbdcf09b2494ac5b34c4d1a391e6d0"
   integrity sha512-+FeZ/52VG4rBSJ0cRE/aB6hMKQzjIgpiSQrGq0eR8ZrXWee7Z2zoGeJzTHVcOeZNawLb+5zvwZNIRGC7X+kQ7Q==
