@@ -20,7 +20,7 @@
     "source-map-support": "^0.5.12"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.61",
+    "@types/aws-lambda": "^8.10.62",
     "@types/jest": "^26.0.0",
     "@types/node": "^10.10.3",
     "dotenv": "^8.0.0",
