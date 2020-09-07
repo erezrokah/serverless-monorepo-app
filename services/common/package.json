@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.62",
-    "@types/jest": "^26.0.0",
+    "@types/jest": "^26.0.13",
     "@types/jsonwebtoken": "^8.3.2",
     "@types/node": "^10.10.3",
     "jest": "26.4.2",
