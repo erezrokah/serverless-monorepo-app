@@ -24,7 +24,7 @@
     "@types/chai": "^4.2.12",
     "@types/jest": "^26.0.13",
     "@types/node": "^10.10.3",
-    "@types/node-fetch": "^2.1.2",
+    "@types/node-fetch": "^2.5.7",
     "aws-testing-library": "^1.0.1",
     "chai": "^4.2.0",
     "jest": "26.4.2",
