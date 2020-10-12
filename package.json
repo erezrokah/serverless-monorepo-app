@@ -27,7 +27,7 @@
     "prettier:ci": "lerna exec yarn prettier:ci"
   },
   "devDependencies": {
-    "jest-junit": "^11.0.0",
+    "jest-junit": "^12.0.0",
     "lerna": "^3.14.1",
     "prettier": "^2.0.0"
   },
