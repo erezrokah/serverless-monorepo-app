@@ -20,7 +20,7 @@
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^10.10.3",
     "jest": "26.6.3",
-    "ts-jest": "26.5.1",
+    "ts-jest": "26.5.2",
     "ts-loader": "^8.0.0",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
