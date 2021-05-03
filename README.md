@@ -45,7 +45,7 @@ Serverless [CLI](https://serverless.com/framework/docs/getting-started/)
 
 ## Repository structure
 
-This repository uses [lerna](https://lernajs.io/) and yarn workspaces to handle dependencies.
+This repository uses [lerna](https://lerna.js.org/) and yarn workspaces to handle dependencies.
 
 The React frontend app sits under `frontend/`.
 
