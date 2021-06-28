@@ -27,7 +27,7 @@
     "@types/node-fetch": "^2.5.7",
     "aws-testing-library": "^1.0.0",
     "chai": "^4.2.0",
-    "jest": "27.0.4",
+    "jest": "27.0.5",
     "mockdate": "^3.0.0",
     "serverless-plugin-tracing": "^2.0.0",
     "serverless-webpack": "^5.2.0",
