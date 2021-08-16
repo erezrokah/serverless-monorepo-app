@@ -21,7 +21,7 @@
     "@anttiviljami/serverless-stack-output": "^0.3.1",
     "@types/aws-lambda": "^8.10.62",
     "@types/chai": "^4.2.12",
-    "@types/jest": "^26.0.13",
+    "@types/jest": "^27.0.0",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^14.0.0",
     "@types/puppeteer": "^5.0.0",
