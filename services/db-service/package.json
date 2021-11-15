@@ -28,7 +28,7 @@
     "aws-testing-library": "^1.0.0",
     "chai": "^4.2.0",
     "dotenv": "^10.0.0",
-    "jest": "27.1.0",
+    "jest": "27.3.1",
     "mockdate": "^3.0.0",
     "serverless-plugin-tracing": "^2.0.0",
     "serverless-webpack": "^5.2.0",
