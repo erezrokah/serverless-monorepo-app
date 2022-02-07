@@ -3891,14 +3891,14 @@ aws-sign2@~0.7.0:
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
   integrity sha1-tG6JCTSpWR8tL2+G1+ap8bP+dqg=
 
-aws-testing-library@^1.0.0, aws-testing-library@^1.0.1:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/aws-testing-library/-/aws-testing-library-1.1.6.tgz#a6fc4167300570f10d1f1d27e67914399bb52985"
-  integrity sha512-LHkc4LzHEXR86dzm+gSzy9KDd0ihBd7kdTOOSHD7B30fv9ttZmc3lAsK0FPymklvF4znjbgTcgRuODkShUhdBQ==
+aws-testing-library@^2.0.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/aws-testing-library/-/aws-testing-library-2.1.1.tgz#7bd991cf4c417961d6c49941cfde5eb2732c7783"
+  integrity sha512-eHmWaG7WsAeUn0MsipLCeODC8hB0OcSsoopVjmjxXtwMIpzenIlji4oiz/g+TwgDKrhqn1jauS3NIAF4r480Dw==
   dependencies:
     aws-sdk "^2.678.0"
     axios "^0.25.0"
-    filter-obj "^2.0.1"
+    filter-obj "^3.0.0"
     jest-diff "^27.0.0"
     uuid "^8.0.0"
 
@@ -6493,10 +6493,10 @@ filter-obj@^1.1.0:
   resolved "https://registry.yarnpkg.com/filter-obj/-/filter-obj-1.1.0.tgz#9b311112bc6c6127a16e016c6c5d7f19e0805c5b"
   integrity sha1-mzERErxsYSehbgFsbF1/GeCAXFs=
 
-filter-obj@^2.0.1:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/filter-obj/-/filter-obj-2.0.2.tgz#fff662368e505d69826abb113f0f6a98f56e9d5f"
-  integrity sha512-lO3ttPjHZRfjMcxWKb1j1eDhTFsu4meeR3lnMcnBFhk6RuLhvEiuALu2TlfL310ph4lCYYwgF/ElIjdP739tdg==
+filter-obj@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/filter-obj/-/filter-obj-3.0.0.tgz#dba2f9e64e921758ed9a51028ca2ed02d4cccbcf"
+  integrity sha512-oQZM+QmVni8MsYzcq9lgTHD/qeLqaG8XaOPOW7dzuSafVxSUlH1+1ZDefj2OD9f2XsmG5lFl2Euc9NI4jgwFWg==
 
 finalhandler@~1.1.2:
   version "1.1.2"
