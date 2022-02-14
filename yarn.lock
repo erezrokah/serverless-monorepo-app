@@ -2488,9 +2488,7 @@
     deepmerge "^4.2.2"
 
 "@sendgrid/mail@^7.0.0":
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-7.6.0.tgz#e74ee30110527feab5d3b83d68af0cd94537f6d2"
-  integrity sha512-0KdaSZzflJD/vUAZjB3ALBIuaVGoLq22hrb2fvQXZHRepU/yhRNlEOqrr05MfKBnKskzq1blnD1J0fHxiwaolw==
+  version: "7.6.1"
   dependencies:
     "@sendgrid/client" "^7.6.0"
     "@sendgrid/helpers" "^7.6.0"
