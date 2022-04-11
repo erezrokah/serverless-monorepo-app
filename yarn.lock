@@ -12432,9 +12432,7 @@ serverless-s3-remover@^0.6.0:
   version "1.0.0"
 
 serverless-webpack@^5.2.0:
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-5.6.1.tgz#f3524638d940264356a86a9853bb5b5fb94b149e"
-  integrity sha512-UP/wc++/tP4l2pv6A4lxaRaIz1DUcW4h2cCoB5WGK62DHTWNGyvfQjWV5VP4HhMvF9C+D1dxMll9oksW6bbktg==
+  version: "5.7.0"
   dependencies:
     bestzip "^2.2.0"
     bluebird "^3.7.2"
