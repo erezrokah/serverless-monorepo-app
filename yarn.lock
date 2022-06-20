@@ -3090,7 +3090,9 @@
     "@types/node" "*"
 
 "@types/node-fetch@^3.0.0":
-  version "3.2.6"
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-3.0.3.tgz#9d969c9a748e841554a40ee435d26e53fa3ee899"
+  integrity sha512-HhggYPH5N+AQe/OmN6fmhKmRRt2XuNJow+R3pQwJxOOF9GuwM7O2mheyGeIrs5MOIeNjDEdgdoyHBOrFeJBR3g==
   dependencies:
     node-fetch "*"
 
@@ -4056,9 +4058,9 @@ autoprefixer@^10.4.2:
     postcss-value-parser "^4.2.0"
 
 aws-sdk@^2.449.0, aws-sdk@^2.678.0:
-  version "2.1148.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1148.0.tgz#028211e724aee5118223eb5fa65495eaae4b5083"
-  integrity sha512-FUYAyveKmS5eqIiGQgrGVsLZwwtI+K6S6Gz8oJf56pgypZCo9dV+cXO4aaS+vN0+LSmGh6dSKc6G8h8FYASIJg==
+  version "2.1158.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1158.0.tgz#924fb6dda1acecb1dc1c8901095cf64d6acdade4"
+  integrity sha512-uHYzZMGE+b50sWXaLhga4aD1SpB3+DEZclAkg9aYz2pDZlSDTOMh3uJ/ufsMBs7VcDKGS7mQRibCmCbwRGTIlg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
