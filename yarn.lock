@@ -2892,9 +2892,9 @@
     "@types/node" "*"
 
 "@types/chai@^4.2.12":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.3.1.tgz#e2c6e73e0bdeb2521d00756d099218e9f5d90a04"
-  integrity sha512-/zPMqDkzSZ8t3VtxOa4KPq7uzzW978M9Tvh+j7GHKuo6k6GTLxPJ4J5gE5cjfJ26pnXst0N5Hax8Sr0T2Mi9zQ==
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.3.2.tgz#29b4afe85a0bb85f3d39a586f25038a8d78229b2"
+  integrity sha512-TNeRJV5O1L0s7NM4Xg9q8HPbLnyAMQ9twPMul53hWRld//NnjV/VSw7InBCNrPJyWBPhyoSLlzR2mR9Fq5nJTg==
 
 "@types/cheerio@*":
   version "0.22.31"
@@ -3090,7 +3090,9 @@
     "@types/node" "*"
 
 "@types/node-fetch@^3.0.0":
-  version "3.2.10"
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-3.0.3.tgz#9d969c9a748e841554a40ee435d26e53fa3ee899"
+  integrity sha512-HhggYPH5N+AQe/OmN6fmhKmRRt2XuNJow+R3pQwJxOOF9GuwM7O2mheyGeIrs5MOIeNjDEdgdoyHBOrFeJBR3g==
   dependencies:
     node-fetch "*"
 
