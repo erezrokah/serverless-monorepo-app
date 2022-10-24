@@ -4094,15 +4094,15 @@ aws-sign2@~0.7.0:
   integrity sha1-tG6JCTSpWR8tL2+G1+ap8bP+dqg=
 
 aws-testing-library@^2.0.0:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/aws-testing-library/-/aws-testing-library-2.1.5.tgz#0a96acbe41f49334769ad3093d37b837d09eab58"
-  integrity sha512-OihV6LFyiQQOIKm2LZkhsmXRW474wqEa+c4c2tkCBOsWZf37IeZWAYbQF8qfbcIYmc3mdiLhGl227zNlUwpWXQ==
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/aws-testing-library/-/aws-testing-library-2.1.7.tgz#20933b92659674d0ebf881fbc0582b6ec49e7700"
+  integrity sha512-VE2zpaK1aWQuDRMCmWmuBfyd1KD8KALbC5PetvIW4rP2KRSHtnN7W7tKdDA5vWXV22e3BsfEXEZbx23ZhjmsVA==
   dependencies:
     aws-sdk "^2.678.0"
     axios "^0.27.0"
     filter-obj "^3.0.0"
     jest-diff "^28.0.0"
-    uuid "^8.0.0"
+    uuid "^9.0.0"
 
 aws-xray-sdk-core@3.3.8:
   version "3.3.8"
@@ -14029,6 +14029,11 @@ uuid@^8.0.0, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+uuid@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"
