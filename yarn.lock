@@ -3199,9 +3199,9 @@
     "@types/react" "^17"
 
 "@types/react-loadable@^5.4.1":
-  version "5.5.8"
-  resolved "https://registry.yarnpkg.com/@types/react-loadable/-/react-loadable-5.5.8.tgz#aa5a619e1143eb0ccb3fda3995126e498a237e44"
-  integrity sha512-olSpMd7vaV9HGKZsObtThi4M5zUNolA/J7SGW3N/Ri+qUUNEanI1ZIDOjK/TJiJ7hSqj3CnG2JiAjH0qwUDxnQ==
+  version "5.5.9"
+  resolved "https://registry.yarnpkg.com/@types/react-loadable/-/react-loadable-5.5.9.tgz#0e9fb4ac57127a8b3bab1f3c3eda4fa8558c9560"
+  integrity sha512-41zXtHILu2kNzZJMEEvd/3cPZbqlido7Prjncr7m34tIDsqQYCp8DSAPEMR+xyiJr7XM42X6ZP35fUDN5U/g8g==
   dependencies:
     "@types/react" "*"
     "@types/webpack" "^4"
