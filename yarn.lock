@@ -3250,14 +3250,14 @@
     csstype "^3.0.2"
 
 "@types/redux-actions@^2.3.0":
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/@types/redux-actions/-/redux-actions-2.6.2.tgz#5956d9e7b9a644358e2c0610f47b1fa3060edc21"
-  integrity sha512-TvcINy8rWFANcpc3EiEQX9Yv3owM3d3KIrqr2ryUIOhYIYzXA/bhDZeGSSSuai62iVR2qMZUgz9tQ5kr0Kl+Tg==
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/@types/redux-actions/-/redux-actions-2.6.3.tgz#b001d2c978a586af94059e74bbff2f4d3dc11ac9"
+  integrity sha512-dmBoPJcJjiRXgc3Bw1dfUy2IiJI95DuN7dJ4V/G/FsbZ+LY5aKyS8qBAldMLq23JOLc/DxxwvLOF82Hr7HtY/g==
 
 "@types/redux-auth-wrapper@^2.0.8":
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/@types/redux-auth-wrapper/-/redux-auth-wrapper-2.0.13.tgz#64508302114b01b5f686815ff9654aee96aa8ba8"
-  integrity sha512-vRt35/fL27IIDA0gMSD+cTvkJ5h8vQIkX417fgmvEWcjEtIYP3SV6121HFstvg8dxzM6vaciqzrrWQrBzxbgWw==
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/@types/redux-auth-wrapper/-/redux-auth-wrapper-2.0.14.tgz#b189ee71e5f51cf9121ac961e7f7b4c927ff1d97"
+  integrity sha512-w+V5FczpB6wjjl4cj09ctCAaOTL1A69nc7j1je4K0wUH3yl6YiGsLN6BTxEZGKW5ziSYqXeIEExuCDB7OLOetg==
   dependencies:
     "@types/history" "^4.7.11"
     "@types/react" "*"
