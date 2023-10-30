@@ -3136,24 +3136,24 @@
   integrity sha512-Y86MAxASe25hNzlDbsviXl8jQHb0RDvKt4c40ZJQ1Don0AAL0STLZSs4N+6gLEO55pedy7r2cLwS+ZDxPm/2Bw==
 
 "@types/node@^16.0.0":
-  version "16.18.58"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.58.tgz#bf66f63983104ed57c754f4e84ccaf16f8235adb"
-  integrity sha512-YGncyA25/MaVtQkjWW9r0EFBukZ+JulsLcVZBlGUfIb96OBMjkoRWwQo5IEWJ8Fj06Go3GHw+bjYDitv6BaGsA==
+  version "16.18.59"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.59.tgz#4cdbd631be6d9be266a96fb17b5d0d7ad6bbe26c"
+  integrity sha512-PJ1w2cNeKUEdey4LiPra0ZuxZFOGvetswE8qHRriV/sUkL5Al4tTmPV9D2+Y/TPIxTHHgxTfRjZVKWhPw/ORhQ==
 
 "@types/normalize-package-data@^2.4.0":
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.2.tgz#9b0e3e8533fe5024ad32d6637eb9589988b6fdca"
-  integrity sha512-lqa4UEhhv/2sjjIQgjX8B+RBjj47eo0mzGasklVJ78UKGQY1r0VpB9XHDaZZO9qzEFDdy4MrXLuEaSmPrPSe/A==
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.3.tgz#291c243e4b94dbfbc0c0ee26b7666f1d5c030e2c"
+  integrity sha512-ehPtgRgaULsFG8x0NeYJvmyH1hmlfsNLujHe9dQEia/7MAJYdzMSi19JtchUHjmBA6XC/75dK55mzZH+RyieSg==
 
 "@types/parse-json@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
-  integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.1.tgz#27f7559836ad796cea31acb63163b203756a5b4e"
+  integrity sha512-3YmXzzPAdOTVljVMkTMBdBEvlOLg2cDQaDhnnhT3nT9uDbnJzjWhKlzb+desT12Y7tGqaN6d+AbozcKzyL36Ng==
 
 "@types/pg@*":
-  version "8.10.3"
-  resolved "https://registry.yarnpkg.com/@types/pg/-/pg-8.10.3.tgz#39b3acba4f313a65c8fbb4b241fcb21cc1ba4126"
-  integrity sha512-BACzsw64lCZesclRpZGu55tnqgFAYcrCBP92xLh1KLypZLCOsvJTSTgaoFVTy3lCys/aZTQzfeDxtjwrvdzL2g==
+  version "8.10.7"
+  resolved "https://registry.yarnpkg.com/@types/pg/-/pg-8.10.7.tgz#2f172598272e581e72cba640026e5152b5a3d5c3"
+  integrity sha512-ksJqHipwYaSEHz9e1fr6H6erjoEdNNaOxwyJgPx9bNeaqOW3iWBQgVHfpwiSAoqGzchfc+ZyRLwEfeCcyYD3uQ==
   dependencies:
     "@types/node" "*"
     pg-protocol "*"
