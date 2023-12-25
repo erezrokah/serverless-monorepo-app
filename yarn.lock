@@ -3255,9 +3255,9 @@
   integrity sha512-dmBoPJcJjiRXgc3Bw1dfUy2IiJI95DuN7dJ4V/G/FsbZ+LY5aKyS8qBAldMLq23JOLc/DxxwvLOF82Hr7HtY/g==
 
 "@types/redux-auth-wrapper@^2.0.8":
-  version "2.0.14"
-  resolved "https://registry.yarnpkg.com/@types/redux-auth-wrapper/-/redux-auth-wrapper-2.0.14.tgz#b189ee71e5f51cf9121ac961e7f7b4c927ff1d97"
-  integrity sha512-w+V5FczpB6wjjl4cj09ctCAaOTL1A69nc7j1je4K0wUH3yl6YiGsLN6BTxEZGKW5ziSYqXeIEExuCDB7OLOetg==
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/@types/redux-auth-wrapper/-/redux-auth-wrapper-2.0.16.tgz#29d7981e283418170782073e049ec484769e3e15"
+  integrity sha512-Uj3IFMqVD4e9aCiBPrw+Ix5msJvWlrjRAVa1iV529zNzEYhdtLfVq9/tM4K9yZWMRjLFqXbTam2qz2bgnklrSA==
   dependencies:
     "@types/history" "^4.7.11"
     "@types/react" "*"
