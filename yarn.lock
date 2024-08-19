@@ -4157,9 +4157,9 @@ available-typed-arrays@^1.0.6:
   integrity sha512-j1QzY8iPNPG4o4xmO3ptzpRxTciqD3MgEHtifP/YnJpIo58Xu+ne4BejlbkuaLfXn/nz6HFiw29bLpj2PNMdGg==
 
 aws-sdk@^2.449.0, aws-sdk@^2.678.0:
-  version "2.1258.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1258.0.tgz#35cadaef14e2cebe0ed13029d2d9f84bb3cf2e8b"
-  integrity sha512-siqNFXlhJZVN1BizPZebJViFXtTUPgcA+yLfHKl2eC4Ied7kE7spOjZmAzpuiGUTzFagk1oWCaJ1Hit4llIoGg==
+  version "2.1677.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1677.0.tgz#22953f892067956bddcd0f9f0f7bff9fd735d01c"
+  integrity sha512-hIwHr+sfKwS40+AA6yNGR4I0xYGK6tZ9wrg1YmhQRQ5q12KmdXgau6rFNa2VizUxdMlwumgixncvNk4m8Ffx8g==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -4170,7 +4170,7 @@ aws-sdk@^2.449.0, aws-sdk@^2.678.0:
     url "0.10.3"
     util "^0.12.4"
     uuid "8.0.0"
-    xml2js "0.4.19"
+    xml2js "0.6.2"
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -15469,23 +15469,23 @@ xml-name-validator@^3.0.0:
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
   integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
 
-xml2js@0.4.19:
-  version "0.4.19"
-  resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.19.tgz#686c20f213209e94abf0d1bcf1efaa291c7827a7"
-  integrity sha512-esZnJZJOiJR9wWKMyuvSE1y6Dq5LCuJanqhxslH2bxM6duahNZ+HMpCLhBQGZkbX6xRf8x1Y2eJlgt2q3qo49Q==
+xml2js@0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.6.2.tgz#dd0b630083aa09c161e25a4d0901e2b2a929b499"
+  integrity sha512-T4rieHaC1EXcES0Kxxj4JWgaUQHDk+qwHcYOCFHfiwKz7tOVPLq7Hjq9dM1WCMhylqMEfP7hMcOIChvotiZegA==
   dependencies:
     sax ">=0.6.0"
-    xmlbuilder "~9.0.1"
+    xmlbuilder "~11.0.0"
 
 xml@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
   integrity sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
 
-xmlbuilder@~9.0.1:
-  version "9.0.7"
-  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-9.0.7.tgz#132ee63d2ec5565c557e20f4c22df9aca686b10d"
-  integrity sha1-Ey7mPS7FVlxVfiD0wi35rKaGsQ0=
+xmlbuilder@~11.0.0:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-11.0.1.tgz#be9bae1c8a046e76b31127726347d0ad7002beb3"
+  integrity sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA==
 
 xmlchars@^2.2.0:
   version "2.2.0"
