@@ -4116,9 +4116,9 @@ atomic-batcher@^1.0.2:
   integrity sha1-0WkB0QzOxZUWwZe5zNiTBom4E7Q=
 
 auth0-js@^9.7.3:
-  version "9.26.1"
-  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.26.1.tgz#71af2813c4c67e9f185145afc421c58c40594584"
-  integrity sha512-88KtFHeCbApIF/4VTFT1Dgq4dKAMlZBjNWhOw0GTdMW3419TqQwuEgVXzObJKue/l5g+drYtHqw6VBOPMGmRwQ==
+  version "9.27.0"
+  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.27.0.tgz#5babf62faebb91d3b1554b3d479015b8ca8f4fb8"
+  integrity sha512-v0qcPulkG/ezsCarJO9tDi3KeYAaEhVz84goq4x2dyk7NWs9JeGnvaT3eSehN11fRkoFXaQByMntEYVD9BqxPg==
   dependencies:
     base64-js "^1.5.1"
     idtoken-verifier "^2.2.4"
