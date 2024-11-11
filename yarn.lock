@@ -3241,7 +3241,9 @@
     "@types/webpack" "^4"
 
 "@types/react-redux@^7.0.0", "@types/react-redux@^7.1.20":
-  version "7.2.9"
+  version "7.1.34"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.1.34.tgz#83613e1957c481521e6776beeac4fd506d11bd0e"
+  integrity sha512-GdFaVjEbYv4Fthm2ZLvj1VSCedV7TqE5y1kNwnjSdBOTXuRSgowux6J8TAct15T3CKBr63UMk+2CO7ilRhyrAQ==
   dependencies:
     "@types/hoist-non-react-statics" "^3.3.0"
     "@types/react" "*"
@@ -4125,9 +4127,9 @@ atomic-batcher@^1.0.2:
   integrity sha1-0WkB0QzOxZUWwZe5zNiTBom4E7Q=
 
 auth0-js@^9.7.3:
-  version "9.27.0"
-  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.27.0.tgz#5babf62faebb91d3b1554b3d479015b8ca8f4fb8"
-  integrity sha512-v0qcPulkG/ezsCarJO9tDi3KeYAaEhVz84goq4x2dyk7NWs9JeGnvaT3eSehN11fRkoFXaQByMntEYVD9BqxPg==
+  version "9.28.0"
+  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.28.0.tgz#f9d3f0ddf865d4e34f1befb0eacfaa6785ca2f9e"
+  integrity sha512-2xIfQIGM0vX3IdPR91ztLO2+Ar2I5+3iFKcjuZO+LV9vRh4Wje+Ka1hnHjMU9dH892Lm3ZxBAHxRo68YToUhfg==
   dependencies:
     base64-js "^1.5.1"
     idtoken-verifier "^2.2.4"
