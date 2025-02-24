@@ -23,7 +23,7 @@
     "@types/aws-lambda": "^8.10.62",
     "@types/chai": "^4.2.12",
     "@types/jest": "^27.0.0",
-    "@types/node": "^16.0.0",
+    "@types/node": "^22.0.0",
     "@types/uuid": "^8.0.0",
     "aws-testing-library": "^2.0.0",
     "chai": "^4.2.0",
