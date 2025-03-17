@@ -7306,10 +7306,10 @@ fs-extra@^10.0.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
-fs-extra@^11.2.0:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.2.0.tgz#e70e17dfad64232287d01929399e0ea7c86b0e5b"
-  integrity sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==
+fs-extra@^11.3.0:
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.3.0.tgz#0daced136bbaf65a555a326719af931adc7a314d"
+  integrity sha512-Z4XaCL6dUDHfP/jT25jJKMmtxvuwbkrD1vNSMFlo9lNLY2c5FHYSQgHPRZUjAB26TpDEoW9HCOgplrdbaPV/ew==
   dependencies:
     graceful-fs "^4.2.0"
     jsonfile "^6.0.1"
@@ -13191,10 +13191,15 @@ semver@^7.3.7:
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.6.2.tgz#1e3b34759f896e8f14d6134732ce798aeb0c6e13"
   integrity sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==
 
-semver@^7.5.3, semver@^7.6.3:
+semver@^7.5.3:
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.6.3.tgz#980f7b5550bc175fb4dc09403085627f9eb33143"
   integrity sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==
+
+semver@^7.7.1:
+  version "7.7.1"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.1.tgz#abd5098d82b18c6c81f6074ff2647fd3e7220c9f"
+  integrity sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==
 
 send@0.17.2:
   version "0.17.2"
@@ -13276,18 +13281,18 @@ serverless-s3-remover@^0.6.0:
   version "1.0.0"
 
 serverless-webpack@^5.2.0:
-  version "5.15.0"
-  resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-5.15.0.tgz#064e34ef4c78076057e2ab8380922d8bdc00df6d"
-  integrity sha512-zgPoA89OyKziVR22X6tsfImmoG9UB3QzoVDUpEmuB0VZBN/97RaonSLMoeMQFqcZ7ckXXIjqwb4ylmhD8vGHcA==
+  version "5.15.1"
+  resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-5.15.1.tgz#b4d5e0b2491a61b19772dce63981720b4c5d82cd"
+  integrity sha512-hvBd/svkiR4ji56XGDlJNafQabW7MnwNLWYVsHDMM2SQ+ipWFbk17QJExWo6HqxN1uErOYMIn1a+Yb2EzMWAZQ==
   dependencies:
     archiver "^7.0.1"
     bluebird "^3.7.2"
     find-yarn-workspace-root "^2.0.0"
-    fs-extra "^11.2.0"
+    fs-extra "^11.3.0"
     glob "^10.4.5"
     is-builtin-module "^3.2.1"
     lodash "^4.17.21"
-    semver "^7.6.3"
+    semver "^7.7.1"
 
 set-blocking@~2.0.0:
   version "2.0.0"
