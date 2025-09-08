@@ -7366,10 +7366,10 @@ fs-extra@^10.0.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
-fs-extra@^11.3.0:
-  version "11.3.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.3.0.tgz#0daced136bbaf65a555a326719af931adc7a314d"
-  integrity sha512-Z4XaCL6dUDHfP/jT25jJKMmtxvuwbkrD1vNSMFlo9lNLY2c5FHYSQgHPRZUjAB26TpDEoW9HCOgplrdbaPV/ew==
+fs-extra@^11.3.1:
+  version "11.3.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.3.1.tgz#ba7a1f97a85f94c6db2e52ff69570db3671d5a74"
+  integrity sha512-eXvGGwZ5CL17ZSwHWd3bbgk7UUpF6IFHtP57NYYakPvHOs8GDgDe5KJI36jIJzDkJ6eJjuzRA8eBQb6SkKue0g==
   dependencies:
     graceful-fs "^4.2.0"
     jsonfile "^6.0.1"
@@ -13397,14 +13397,14 @@ serverless-s3-remover@^0.6.0:
   version "1.0.0"
 
 serverless-webpack@^5.2.0:
-  version "5.15.2"
-  resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-5.15.2.tgz#9c3f612b652f268e27f7ebb35d31df35ef9d11be"
-  integrity sha512-oKz9BfBms1K/T6SRqZ6V76ZoMEuj7mi2W7wtycfRa3M+9n4lufaQXspMstXKEzPtgQSAPo27FfnYtWenYezFXQ==
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-5.15.3.tgz#307233ee058b1bdf875417b25dd6ed2728fbe38c"
+  integrity sha512-qYs+oakvTDri9x1DMtzecsA76LT6NX4LST349gJ7g1Nr3hslJTGfH+8h0J0xkDOH1fhiEJCVMEl7ZfRQmySutQ==
   dependencies:
     archiver "^7.0.1"
     bluebird "^3.7.2"
     find-yarn-workspace-root "^2.0.0"
-    fs-extra "^11.3.0"
+    fs-extra "^11.3.1"
     glob "^10.4.5"
     is-builtin-module "^3.2.1"
     lodash "^4.17.21"
