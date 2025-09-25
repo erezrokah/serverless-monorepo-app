@@ -3269,14 +3269,14 @@
     "@types/history" "^4.7.11"
     "@types/react" "*"
 
-"@types/react-test-renderer@^17.0.0":
-  version "17.0.9"
-  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-17.0.9.tgz#da6d06f3f37eefab39386c390140374dc5db5b33"
-  integrity sha512-bOfxcu5oZ+KxvACScbkTwZ4eGCtZFTz4VZCOVAIfGbThxqiXSIGipKVG8ubaYBXquUSQROzNIUzviWdSnnAlzg==
+"@types/react-test-renderer@^19.0.0":
+  version "19.1.0"
+  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-19.1.0.tgz#1d0af8f2e1b5931e245b8b5b234d1502b854dc10"
+  integrity sha512-XD0WZrHqjNrxA/MaR9O22w/RNidWR9YZmBdRGI7wcnWGrv/3dA8wKCJ8m63Sn+tLJhcjmuhOi629N66W6kgWzQ==
   dependencies:
-    "@types/react" "^17"
+    "@types/react" "*"
 
-"@types/react@*", "@types/react@17.0.88", "@types/react@^16", "@types/react@^17", "@types/react@^17.0.0":
+"@types/react@*", "@types/react@17.0.88", "@types/react@^16", "@types/react@^17.0.0":
   version "17.0.88"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.88.tgz#d926ade927fcad5a79338fb283dc93fc84bcf1d9"
   integrity sha512-HEOvpzcFWkEcHq4EsTChnpimRc3Lz1/qzYRDFtobFp4obVa6QVjCDMjWmkgxgaTYttNvyjnldY8MUflGp5YiUw==
